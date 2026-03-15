@@ -1,0 +1,2666 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML & CSS Encyclopedia — Baroque Edition</title>
+  <meta name="description" content="A complete baroque compendium of HTML & CSS — dark/light mode, multilingual, interactive.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="additions.css">
+  <link rel="stylesheet" href="fixes.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body>
+
+<!-- Scroll progress -->
+<div id="scroll-progress"></div>
+
+<!-- Mobile hamburger -->
+<button class="hamburger" id="hamburger" aria-label="Open menu">
+  <span></span><span></span><span></span>
+</button>
+
+<!-- Sidebar overlay (mobile) -->
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+<!-- ============================================================
+     SIDEBAR
+     ============================================================ -->
+<aside id="sidebar">
+
+  <div class="sidebar-logo" id="sidebar-logo-wrap">
+    <!-- brand logo injected by JS -->
+  </div>
+
+  <!-- Language switcher -->
+  <div class="lang-switcher">
+    <label>Language</label>
+    <select id="lang-select">
+      <option value="en">English</option>
+      <option value="zh_s">中文（简体）</option>
+      <option value="zh_t">中文（繁體）</option>
+      <option value="ja">日本語</option>
+      <option value="ko">한국어</option>
+      <option value="fr">Français</option>
+      <option value="es">Español</option>
+      <option value="de">Deutsch</option>
+    </select>
+  </div>
+
+  <!-- Search -->
+  <div class="sidebar-search">
+    <input type="search" id="sidebar-search" placeholder="⌘K Search sections…" aria-label="Search">
+  </div>
+
+
+  <!-- Reading Progress -->
+  <div class="progress-tracker">
+    <div class="progress-tracker-label">
+      <span>📖 Progress</span>
+      <span id="progress-label">0%</span>
+    </div>
+    <div class="progress-tracker-bar">
+      <div class="progress-tracker-fill" id="progress-fill" style="width:0%"></div>
+    </div>
+  </div>
+
+  <!-- Favorites -->
+  <div class="favorites-panel">
+    <div class="favorites-title">⭐ Favorites</div>
+    <ul class="favorites-list" id="fav-list"></ul>
+    <p class="favorites-empty" id="fav-empty">Click ☆ on any section to save it here.</p>
+  </div>
+
+  <!-- Navigation tree -->
+  <nav class="nav-tree" aria-label="Main navigation">
+
+    <!-- HTML -->
+    <div class="nav-category">
+      <div class="nav-category-title">HTML <span class="arrow">▼</span></div>
+      <ul class="nav-links">
+        <li><a href="#html-fundamentals" data-i18n="lang-html-fund">HTML Fundamentals</a></li>
+        <li><a href="#semantic-html" data-i18n="lang-semantic">Semantic HTML</a></li>
+        <li><a href="#forms-user-input" data-i18n="lang-forms">Forms & Input</a></li>
+        <li><a href="#tables-data" data-i18n="lang-tables">Tables & Data</a></li>
+        <li><a href="#media-embedded" data-i18n="lang-media">Media & Embed</a></li>
+        <li><a href="#graphics-svg" data-i18n="lang-graphics">Graphics & SVG</a></li>
+        <li><a href="#interactive-elements" data-i18n="lang-interact">Interactive</a></li>
+        <li><a href="#metadata-seo" data-i18n="lang-metadata">Metadata & SEO</a></li>
+        <li><a href="#accessibility" data-i18n="lang-access">Accessibility</a></li>
+        <li><a href="#advanced-html" data-i18n="lang-adv-html">Advanced HTML</a></li>
+      </ul>
+    </div>
+
+    <!-- CSS -->
+    <div class="nav-category">
+      <div class="nav-category-title">CSS <span class="arrow">▼</span></div>
+      <ul class="nav-links">
+        <li><a href="#css-fundamentals" data-i18n="lang-css-fund">CSS Fundamentals</a></li>
+        <li><a href="#css-selectors" data-i18n="lang-selectors">CSS Selectors</a></li>
+        <li><a href="#css-variables" data-i18n="lang-variables">CSS Variables</a></li>
+        <li><a href="#css-values" data-i18n="lang-values">Values & Units</a></li>
+        <li><a href="#box-model" data-i18n="lang-boxmodel">Box Model</a></li>
+        <li><a href="#typography" data-i18n="lang-typography">Typography</a></li>
+        <li><a href="#backgrounds" data-i18n="lang-backgrounds">Backgrounds</a></li>
+        <li><a href="#borders-shadows" data-i18n="lang-borders">Borders & Shadows</a></li>
+        <li><a href="#layout-systems" data-i18n="lang-layout">Layout Systems</a></li>
+        <li><a href="#positioning" data-i18n="lang-position">Positioning</a></li>
+        <li><a href="#flexbox" data-i18n="lang-flexbox">Flexbox</a></li>
+        <li><a href="#css-grid" data-i18n="lang-grid">CSS Grid</a></li>
+        <li><a href="#transforms" data-i18n="lang-transforms">Transforms</a></li>
+        <li><a href="#transitions" data-i18n="lang-transitions">Transitions</a></li>
+        <li><a href="#animations" data-i18n="lang-animations">Animations</a></li>
+        <li><a href="#responsive-design" data-i18n="lang-responsive">Responsive Design</a></li>
+        <li><a href="#css-functions" data-i18n="lang-functions">CSS Functions</a></li>
+        <li><a href="#advanced-css" data-i18n="lang-adv-css">Advanced CSS</a></li>
+        <li><a href="#best-practices" data-i18n="lang-best">Best Practices</a></li>
+      </ul>
+    </div>
+
+  </nav>
+
+  <div class="sidebar-footer">
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+      <span class="toggle-icon" id="theme-icon">☀️</span>
+      <span class="toggle-label" id="theme-label">Light Mode</span>
+      <div class="toggle-track"><div class="toggle-thumb"></div></div>
+    </button>
+  </div>
+
+</aside>
+
+<!-- ============================================================
+     MAIN CONTENT
+     ============================================================ -->
+<div class="app-wrapper">
+<main id="main-content">
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <span class="header-ornament" aria-hidden="true" style="display:block;height:40px;margin-bottom:12px;"><svg viewBox='0 0 80 40' xmlns='http://www.w3.org/2000/svg' style='height:40px;width:auto;margin:0 auto;display:block;'><text x='40' y='32' text-anchor='middle' font-family='Cinzel Decorative,serif' font-size='28' fill='url(#hGold)' letter-spacing='8'>✦</text><defs><linearGradient id='hGold' x1='0%' y1='0%' x2='100%' y2='0%'><stop offset='0%' stop-color='#B8860B'/><stop offset='50%' stop-color='#FFD700'/><stop offset='100%' stop-color='#B8860B'/></linearGradient></defs></svg></span>
+    <h1 class="shimmer-text" data-i18n="lang-header-title">HTML & CSS Encyclopedia</h1>
+    <p class="page-header-byline">Cheatsheet by&nbsp;&nbsp;<span style="font-family:'Noto Serif SC',serif;letter-spacing:0.2em;">林元薇</span></p>
+    <div class="header-divider"><span>✦</span></div>
+  </header>
+
+  <!-- ══════════════════════════════════════════════════════
+       ██  HTML  SECTIONS
+       ══════════════════════════════════════════════════════ -->
+
+  <!-- 1. HTML FUNDAMENTALS -->
+  <section class="doc-section" id="html-fundamentals">
+    <div class="section-header">
+      <h2><span class="section-icon">📄</span> <span data-i18n="lang-html-fund">HTML Fundamentals</span> <span class="section-badge">HTML</span></h2>
+      <span class="section-toggle">▼</span>
+    </div>
+    <div class="section-body">
+      <p style="color:var(--text-secondary);margin-bottom:16px;font-size:0.95rem;">HTML (HyperText Markup Language) is the skeleton of every webpage. It uses a system of <em>tags</em> to give structure and meaning to content, telling browsers what everything <em>is</em> — not how it looks.</p>
+
+      <!-- Document Structure -->
+      <article class="prop-card" id="doc-structure">
+        <div class="prop-card-header">
+          <h3>Document Structure</h3>
+          <span class="prop-tag tag-html">Required</span>
+        </div>
+        <div class="prop-description">
+          <p>Every HTML document begins with a <code>&lt;!DOCTYPE html&gt;</code> declaration telling the browser to use the modern HTML5 standard. The <code>&lt;html&gt;</code> root element wraps everything. Inside, <code>&lt;head&gt;</code> holds invisible metadata and <code>&lt;body&gt;</code> holds visible content.</p>
+        </div>
+        <div class="code-block" style="margin:0 18px 8px">
+          <div class="code-block-header">
+            <span class="code-lang-label">HTML</span>
+            <button class="copy-btn">Copy</button>
+          </div>
+          <pre><code><span class="tok-com">&lt;!-- Every HTML file starts with this --&gt;</span>
+<span class="tok-tag">&lt;!DOCTYPE</span> <span class="tok-attr">html</span><span class="tok-tag">&gt;</span>
+<span class="tok-tag">&lt;html</span> <span class="tok-attr">lang</span>=<span class="tok-str">"en"</span><span class="tok-tag">&gt;</span>
+<span class="tok-tag">&lt;head&gt;</span>
+  <span class="tok-tag">&lt;meta</span> <span class="tok-attr">charset</span>=<span class="tok-str">"UTF-8"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;meta</span> <span class="tok-attr">name</span>=<span class="tok-str">"viewport"</span> <span class="tok-attr">content</span>=<span class="tok-str">"width=device-width, initial-scale=1.0"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;title&gt;</span>Document Title<span class="tok-tag">&lt;/title&gt;</span>
+<span class="tok-tag">&lt;/head&gt;</span>
+<span class="tok-tag">&lt;body&gt;</span>
+  <span class="tok-com">&lt;!-- All visible content goes here --&gt;</span>
+<span class="tok-tag">&lt;/body&gt;</span>
+<span class="tok-tag">&lt;/html&gt;</span></code></pre>
+        </div>
+        <div class="try-it-wrap" style="padding:0 18px 14px">
+          <div class="try-it-label">Try It</div>
+          <textarea class="try-it" placeholder="&lt;!DOCTYPE html&gt;&#10;&lt;html lang=&quot;en&quot;&gt;&#10;&lt;head&gt;&#10;  &lt;meta charset=&quot;UTF-8&quot;&gt;&#10;  &lt;title&gt;My Page&lt;/title&gt;&#10;&lt;/head&gt;&#10;&lt;body&gt;&#10;  &lt;h1&gt;Hello World&lt;/h1&gt;&#10;&lt;/body&gt;&#10;&lt;/html&gt;"></textarea>
+        </div>
+      </article>
+
+      <!-- Text Elements -->
+      <article class="prop-card" id="text-elements">
+        <div class="prop-card-header">
+          <h3>Text Elements</h3>
+          <span class="prop-tag tag-html">Content</span>
+        </div>
+        <div class="prop-description">
+          <p>HTML provides six heading levels (<code>&lt;h1&gt;</code>–<code>&lt;h6&gt;</code>), paragraphs (<code>&lt;p&gt;</code>), line breaks (<code>&lt;br&gt;</code>), and horizontal rules (<code>&lt;hr&gt;</code>). Headings convey hierarchy — <code>&lt;h1&gt;</code> is the page title, not just big text.</p>
+        </div>
+        <div class="demo-area">
+          <div class="demo-header">Live Preview</div>
+          <div class="demo-content">
+            <h1>Heading 1 — Page Title</h1>
+            <h2>Heading 2 — Section</h2>
+            <h3>Heading 3 — Subsection</h3>
+            <h4>Heading 4 — Detail</h4>
+            <h5>Heading 5 — Minor</h5>
+            <h6>Heading 6 — Smallest</h6>
+            <p>A paragraph of text. Line breaks create whitespace.<br>Like this one after &lt;br&gt;.</p>
+            <hr style="border:none;border-top:1px solid var(--border-subtle);margin:8px 0;">
+          </div>
+        </div>
+        <div class="try-it-wrap" style="padding:0 18px 14px">
+          <div class="try-it-label">Try It</div>
+          <textarea class="try-it" placeholder="&lt;h1&gt;Heading 1&lt;/h1&gt;&#10;&lt;h2&gt;Heading 2&lt;/h2&gt;&#10;&lt;p&gt;A paragraph of text.&lt;/p&gt;&#10;&lt;br&gt;&#10;&lt;hr&gt;"></textarea>
+        </div>
+      </article>
+
+      <!-- Text Formatting -->
+      <article class="prop-card" id="text-formatting">
+        <div class="prop-card-header">
+          <h3>Inline Text Formatting</h3>
+          <span class="prop-tag tag-html">Inline</span>
+        </div>
+        <div class="prop-description">
+          <p>Inline elements style or emphasize text without creating new lines. Use <code>&lt;strong&gt;</code> for importance, <code>&lt;em&gt;</code> for emphasis, <code>&lt;mark&gt;</code> for highlighting, <code>&lt;del&gt;</code>/<code>&lt;ins&gt;</code> for edits, and <code>&lt;code&gt;</code> for technical text.</p>
+        </div>
+        <div class="demo-area">
+          <div class="demo-header">Live Preview</div>
+          <div class="demo-content">
+            <p style="font-size:0.95rem;line-height:2;">
+              <strong>Bold/Important</strong> ·
+              <em>Italic/Emphasis</em> ·
+              <mark style="background:rgba(212,175,55,0.3);color:var(--text-primary);padding:0 3px;border-radius:2px;">Highlighted</mark> ·
+              <del>Deleted text</del> ·
+              <ins>Inserted</ins> ·
+              <code style="background:rgba(212,175,55,0.1);border:1px solid rgba(212,175,55,0.2);padding:1px 5px;border-radius:3px;font-family:var(--font-code);font-size:0.85em;">code</code> ·
+              <sup>Super</sup><sub>sub</sub> ·
+              <small>small text</small> ·
+              <abbr title="HyperText Markup Language" style="border-bottom:1px dotted var(--accent);cursor:help;">HTML</abbr>
+            </p>
+          </div>
+        </div>
+        <div class="code-block" style="margin:0 18px 8px">
+          <div class="code-block-header"><span class="code-lang-label">HTML</span><button class="copy-btn">Copy</button></div>
+          <pre><code><span class="tok-tag">&lt;strong&gt;</span>Bold/Important<span class="tok-tag">&lt;/strong&gt;</span>
+<span class="tok-tag">&lt;em&gt;</span>Italic/Emphasis<span class="tok-tag">&lt;/em&gt;</span>
+<span class="tok-tag">&lt;mark&gt;</span>Highlighted<span class="tok-tag">&lt;/mark&gt;</span>
+<span class="tok-tag">&lt;del&gt;</span>Deleted<span class="tok-tag">&lt;/del&gt;</span> <span class="tok-tag">&lt;ins&gt;</span>Inserted<span class="tok-tag">&lt;/ins&gt;</span>
+<span class="tok-tag">&lt;code&gt;</span>inline code<span class="tok-tag">&lt;/code&gt;</span>
+<span class="tok-tag">&lt;sup&gt;</span>superscript<span class="tok-tag">&lt;/sup&gt;</span> <span class="tok-tag">&lt;sub&gt;</span>subscript<span class="tok-tag">&lt;/sub&gt;</span>
+<span class="tok-tag">&lt;abbr</span> <span class="tok-attr">title</span>=<span class="tok-str">"HyperText Markup Language"</span><span class="tok-tag">&gt;</span>HTML<span class="tok-tag">&lt;/abbr&gt;</span></code></pre>
+        </div>
+        <div class="try-it-wrap" style="padding:0 18px 14px">
+          <div class="try-it-label">Try It</div>
+          <textarea class="try-it" placeholder="&lt;p&gt;&lt;strong&gt;Bold&lt;/strong&gt; and &lt;em&gt;italic&lt;/em&gt; text.&lt;/p&gt;&#10;&lt;mark&gt;Highlighted&lt;/mark&gt;&#10;&lt;code&gt;console.log('hello')&lt;/code&gt;"></textarea>
+        </div>
+      </article>
+
+      <!-- Links -->
+      <article class="prop-card" id="links-nav">
+        <div class="prop-card-header">
+          <h3>Links & Navigation</h3>
+          <span class="prop-tag tag-html">Navigation</span>
+        </div>
+        <div class="prop-description">
+          <p>The anchor <code>&lt;a&gt;</code> element creates hyperlinks. The <code>href</code> attribute sets the destination — an absolute URL, relative path, or <code>#id</code> fragment. Add <code>target="_blank"</code> to open in a new tab; always pair it with <code>rel="noopener noreferrer"</code> for security.</p>
+        </div>
+        <div class="code-block" style="margin:0 18px 8px">
+          <div class="code-block-header"><span class="code-lang-label">HTML</span><button class="copy-btn">Copy</button></div>
+          <pre><code><span class="tok-com">&lt;!-- External link --&gt;</span>
+<span class="tok-tag">&lt;a</span> <span class="tok-attr">href</span>=<span class="tok-str">"https://example.com"</span> <span class="tok-attr">target</span>=<span class="tok-str">"_blank"</span> <span class="tok-attr">rel</span>=<span class="tok-str">"noopener noreferrer"</span><span class="tok-tag">&gt;</span>
+  Visit Example
+<span class="tok-tag">&lt;/a&gt;</span>
+
+<span class="tok-com">&lt;!-- Same-page anchor --&gt;</span>
+<span class="tok-tag">&lt;a</span> <span class="tok-attr">href</span>=<span class="tok-str">"#section-id"</span><span class="tok-tag">&gt;</span>Jump to Section<span class="tok-tag">&lt;/a&gt;</span>
+
+<span class="tok-com">&lt;!-- Email / phone --&gt;</span>
+<span class="tok-tag">&lt;a</span> <span class="tok-attr">href</span>=<span class="tok-str">"mailto:hello@example.com"</span><span class="tok-tag">&gt;</span>Email Us<span class="tok-tag">&lt;/a&gt;</span>
+<span class="tok-tag">&lt;a</span> <span class="tok-attr">href</span>=<span class="tok-str">"tel:+1234567890"</span><span class="tok-tag">&gt;</span>Call Us<span class="tok-tag">&lt;/a&gt;</span></code></pre>
+        </div>
+        <div class="try-it-wrap" style="padding:0 18px 14px">
+          <div class="try-it-label">Try It</div>
+          <textarea class="try-it" placeholder="&lt;a href=&quot;https://example.com&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&#10;  External Link&#10;&lt;/a&gt;&#10;&lt;a href=&quot;#top&quot;&gt;Back to Top&lt;/a&gt;"></textarea>
+        </div>
+      </article>
+
+      <!-- Media -->
+      <article class="prop-card" id="media-elements">
+        <div class="prop-card-header">
+          <h3>Media Elements</h3>
+          <span class="prop-tag tag-html">Media</span>
+        </div>
+        <div class="prop-description">
+          <p><code>&lt;img&gt;</code> embeds images; always include <code>alt</code> for accessibility. <code>&lt;video&gt;</code> and <code>&lt;audio&gt;</code> use <code>&lt;source&gt;</code> children for multiple formats, ensuring browser compatibility. The <code>controls</code> attribute adds playback UI.</p>
+        </div>
+        <div class="code-block" style="margin:0 18px 8px">
+          <div class="code-block-header"><span class="code-lang-label">HTML</span><button class="copy-btn">Copy</button></div>
+          <pre><code><span class="tok-com">&lt;!-- Image --&gt;</span>
+<span class="tok-tag">&lt;img</span> <span class="tok-attr">src</span>=<span class="tok-str">"photo.jpg"</span> <span class="tok-attr">alt</span>=<span class="tok-str">"Describe the image"</span>
+     <span class="tok-attr">width</span>=<span class="tok-str">"400"</span> <span class="tok-attr">height</span>=<span class="tok-str">"300"</span> <span class="tok-attr">loading</span>=<span class="tok-str">"lazy"</span><span class="tok-tag">&gt;</span>
+
+<span class="tok-com">&lt;!-- Video --&gt;</span>
+<span class="tok-tag">&lt;video</span> <span class="tok-attr">controls</span> <span class="tok-attr">poster</span>=<span class="tok-str">"thumbnail.jpg"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;source</span> <span class="tok-attr">src</span>=<span class="tok-str">"video.webm"</span> <span class="tok-attr">type</span>=<span class="tok-str">"video/webm"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;source</span> <span class="tok-attr">src</span>=<span class="tok-str">"video.mp4"</span>  <span class="tok-attr">type</span>=<span class="tok-str">"video/mp4"</span><span class="tok-tag">&gt;</span>
+<span class="tok-tag">&lt;/video&gt;</span>
+
+<span class="tok-com">&lt;!-- Audio --&gt;</span>
+<span class="tok-tag">&lt;audio</span> <span class="tok-attr">controls</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;source</span> <span class="tok-attr">src</span>=<span class="tok-str">"sound.ogg"</span> <span class="tok-attr">type</span>=<span class="tok-str">"audio/ogg"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;source</span> <span class="tok-attr">src</span>=<span class="tok-str">"sound.mp3"</span> <span class="tok-attr">type</span>=<span class="tok-str">"audio/mpeg"</span><span class="tok-tag">&gt;</span>
+<span class="tok-tag">&lt;/audio&gt;</span></code></pre>
+        </div>
+        <div class="try-it-wrap" style="padding:0 18px 14px">
+          <div class="try-it-label">Try It</div>
+          <textarea class="try-it" placeholder="&lt;img src=&quot;https://via.placeholder.com/300x200&quot; alt=&quot;Placeholder image&quot; loading=&quot;lazy&quot;&gt;&#10;&#10;&lt;video controls&gt;&#10;  &lt;source src=&quot;video.mp4&quot; type=&quot;video/mp4&quot;&gt;&#10;&lt;/video&gt;"></textarea>
+        </div>
+      </article>
+
+      <!-- Lists -->
+      <article class="prop-card" id="lists">
+        <div class="prop-card-header">
+          <h3>Lists</h3>
+          <span class="prop-tag tag-html">Structure</span>
+        </div>
+        <div class="prop-description">
+          <p><code>&lt;ul&gt;</code> (unordered) uses bullets, <code>&lt;ol&gt;</code> (ordered) uses numbers. Both use <code>&lt;li&gt;</code> for items. Description lists <code>&lt;dl&gt;</code> pair terms <code>&lt;dt&gt;</code> with definitions <code>&lt;dd&gt;</code>. Lists can be nested to any depth.</p>
+        </div>
+        <div class="demo-area">
+          <div class="demo-header">Live Preview</div>
+          <div class="demo-content" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;">
+            <div>
+              <p style="font-size:0.75rem;color:var(--text-muted);margin-bottom:4px;">Unordered</p>
+              <ul style="font-size:0.9rem;padding-left:20px;color:var(--text-primary);">
+                <li>Apples</li><li>Bananas</li><li>Cherries</li>
+              </ul>
+            </div>
+            <div>
+              <p style="font-size:0.75rem;color:var(--text-muted);margin-bottom:4px;">Ordered</p>
+              <ol style="font-size:0.9rem;padding-left:20px;color:var(--text-primary);">
+                <li>First step</li><li>Second step</li><li>Third step</li>
+              </ol>
+            </div>
+            <div>
+              <p style="font-size:0.75rem;color:var(--text-muted);margin-bottom:4px;">Description</p>
+              <dl style="font-size:0.85rem;color:var(--text-primary);">
+                <dt style="font-weight:600;color:var(--accent);">HTML</dt>
+                <dd style="margin-left:10px;color:var(--text-secondary);">Structure</dd>
+                <dt style="font-weight:600;color:var(--accent);">CSS</dt>
+                <dd style="margin-left:10px;color:var(--text-secondary);">Style</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <div class="try-it-wrap" style="padding:8px 18px 14px">
+          <div class="try-it-label">Try It</div>
+          <textarea class="try-it" placeholder="&lt;ul&gt;&#10;  &lt;li&gt;Item A&lt;/li&gt;&#10;  &lt;li&gt;Item B&#10;    &lt;ul&gt;&lt;li&gt;Nested&lt;/li&gt;&lt;/ul&gt;&#10;  &lt;/li&gt;&#10;&lt;/ul&gt;&#10;&#10;&lt;ol type=&quot;A&quot;&gt;&#10;  &lt;li&gt;Alpha&lt;/li&gt;&#10;  &lt;li&gt;Beta&lt;/li&gt;&#10;&lt;/ol&gt;"></textarea>
+        </div>
+      </article>
+
+    </div><!-- /section-body -->
+  </section>
+
+  <!-- 2. SEMANTIC HTML -->
+  <section class="doc-section" id="semantic-html">
+    <div class="section-header">
+      <h2><span class="section-icon">🏗️</span> <span data-i18n="lang-semantic">Semantic HTML</span> <span class="section-badge">HTML5</span></h2>
+      <span class="section-toggle">▼</span>
+    </div>
+    <div class="section-body">
+      <p style="color:var(--text-secondary);margin-bottom:16px;font-size:0.95rem;">Semantic elements carry meaning about their content — they tell browsers, screen readers, and search engines <em>what</em> something is, not just what it looks like. This improves accessibility, SEO, and code maintainability.</p>
+
+      <article class="prop-card" id="page-layout-semantic">
+        <div class="prop-card-header">
+          <h3>Page Layout Elements</h3>
+          <span class="prop-tag tag-html">Semantic</span>
+        </div>
+        <div class="prop-description">
+          <p>These structural landmarks divide your page into meaningful regions. Assistive technologies use them for quick navigation.</p>
+        </div>
+        <table class="quick-ref-table" style="margin:0 0 12px">
+          <tr><th>Element</th><th>Purpose</th><th>Notes</th></tr>
+          <tr><td>&lt;header&gt;</td><td>Page or section header, logo, nav</td><td>Can appear multiple times</td></tr>
+          <tr><td>&lt;nav&gt;</td><td>Primary navigation links</td><td>Use for major nav blocks</td></tr>
+          <tr><td>&lt;main&gt;</td><td>Main unique content of the page</td><td>Only once per page</td></tr>
+          <tr><td>&lt;section&gt;</td><td>Thematic grouping with heading</td><td>Should have a heading</td></tr>
+          <tr><td>&lt;article&gt;</td><td>Self-contained, reusable content</td><td>Blog posts, cards, comments</td></tr>
+          <tr><td>&lt;aside&gt;</td><td>Tangentially related content</td><td>Sidebars, callouts</td></tr>
+          <tr><td>&lt;footer&gt;</td><td>Footer — credits, links, copyright</td><td>Can appear in sections too</td></tr>
+          <tr><td>&lt;figure&gt;</td><td>Self-contained media with caption</td><td>Use with &lt;figcaption&gt;</td></tr>
+          <tr><td>&lt;address&gt;</td><td>Contact information</td><td>For the nearest &lt;article&gt;</td></tr>
+        </table>
+        <div class="code-block" style="margin:0 0 8px">
+          <div class="code-block-header"><span class="code-lang-label">HTML</span><button class="copy-btn">Copy</button></div>
+          <pre><code><span class="tok-tag">&lt;header&gt;</span>
+  <span class="tok-tag">&lt;h1&gt;</span>My Website<span class="tok-tag">&lt;/h1&gt;</span>
+  <span class="tok-tag">&lt;nav&gt;</span>
+    <span class="tok-tag">&lt;a</span> <span class="tok-attr">href</span>=<span class="tok-str">"/"</span><span class="tok-tag">&gt;</span>Home<span class="tok-tag">&lt;/a&gt;</span>
+    <span class="tok-tag">&lt;a</span> <span class="tok-attr">href</span>=<span class="tok-str">"/about"</span><span class="tok-tag">&gt;</span>About<span class="tok-tag">&lt;/a&gt;</span>
+  <span class="tok-tag">&lt;/nav&gt;</span>
+<span class="tok-tag">&lt;/header&gt;</span>
+
+<span class="tok-tag">&lt;main&gt;</span>
+  <span class="tok-tag">&lt;section&gt;</span>
+    <span class="tok-tag">&lt;h2&gt;</span>Featured Posts<span class="tok-tag">&lt;/h2&gt;</span>
+    <span class="tok-tag">&lt;article&gt;</span>
+      <span class="tok-tag">&lt;h3&gt;</span>Post Title<span class="tok-tag">&lt;/h3&gt;</span>
+      <span class="tok-tag">&lt;p&gt;</span>Post content…<span class="tok-tag">&lt;/p&gt;</span>
+    <span class="tok-tag">&lt;/article&gt;</span>
+  <span class="tok-tag">&lt;/section&gt;</span>
+  <span class="tok-tag">&lt;aside&gt;</span>Related links…<span class="tok-tag">&lt;/aside&gt;</span>
+<span class="tok-tag">&lt;/main&gt;</span>
+
+<span class="tok-tag">&lt;footer&gt;</span>
+  <span class="tok-tag">&lt;p&gt;</span>&amp;copy; 2025 My Website<span class="tok-tag">&lt;/p&gt;</span>
+<span class="tok-tag">&lt;/footer&gt;</span></code></pre>
+        </div>
+        <div class="try-it-wrap" style="padding:0 0 6px">
+          <div class="try-it-label">Try It</div>
+          <textarea class="try-it" placeholder="&lt;header&gt;&lt;h1&gt;Site Title&lt;/h1&gt;&lt;/header&gt;&#10;&lt;main&gt;&#10;  &lt;article&gt;&#10;    &lt;h2&gt;Article&lt;/h2&gt;&#10;    &lt;p&gt;Content here.&lt;/p&gt;&#10;  &lt;/article&gt;&#10;&lt;/main&gt;&#10;&lt;footer&gt;Footer&lt;/footer&gt;"></textarea>
+        </div>
+      </article>
+
+      <!-- Pro Web Structure diagram -->
+      <article class="prop-card">
+        <div class="prop-card-header"><h3>Pro Web Structure Tree</h3><span class="prop-tag tag-new">Diagram</span></div>
+        <div class="prop-description"><p>A professional page hierarchy used in real-world production websites.</p></div>
+        <div class="code-block" style="margin:0 0 6px">
+          <div class="code-block-header"><span class="code-lang-label">Structure</span><button class="copy-btn">Copy</button></div>
+          <pre><code>html
+ ├─ head
+ │   ├─ meta (charset, viewport, description, og:*)
+ │   ├─ title
+ │   ├─ link (stylesheet, preload, favicon)
+ │   └─ script (defer / type="module")
+ │
+ └─ body
+     ├─ header
+     │   └─ nav  ← skip-link, logo, primary links
+     │
+     ├─ main
+     │   ├─ &lt;section&gt; hero         ← h1 lives here
+     │   ├─ &lt;section&gt; features
+     │   ├─ &lt;section&gt; testimonials
+     │   ├─ &lt;section&gt; pricing
+     │   └─ &lt;section&gt; contact
+     │
+     ├─ aside  ← sidebar (optional)
+     └─ footer ← sitemap, legal, social</code></pre>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- 3. FORMS -->
+  <section class="doc-section" id="forms-user-input">
+    <div class="section-header">
+      <h2><span class="section-icon">📝</span> <span data-i18n="lang-forms">Forms &amp; User Input</span></h2>
+      <span class="section-toggle">▼</span>
+    </div>
+    <div class="section-body">
+      <p style="color:var(--text-secondary);margin-bottom:16px;font-size:0.95rem;">Forms collect data from users and send it to servers (or handle it with JavaScript). The <code>&lt;form&gt;</code> element wraps all inputs; <code>action</code> specifies where data goes and <code>method</code> specifies how (GET or POST).</p>
+
+      <article class="prop-card" id="input-types">
+        <div class="prop-card-header"><h3>All Input Types</h3><span class="prop-tag tag-html">Forms</span></div>
+        <div class="prop-description"><p>HTML5 expanded the input type palette enormously. Using the right <code>type</code> gives mobile devices the correct keyboard, enables built-in validation, and improves UX at zero code cost.</p></div>
+
+        <div class="demo-area">
+          <div class="demo-header">Live Form Demo</div>
+          <div class="demo-content">
+            <div class="demo-form" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+              <div class="form-group"><label>Text</label><input type="text" placeholder="John Doe"></div>
+              <div class="form-group"><label>Email</label><input type="email" placeholder="hello@example.com"></div>
+              <div class="form-group"><label>Password</label><input type="password" placeholder="••••••••"></div>
+              <div class="form-group"><label>Number</label><input type="number" placeholder="42" min="0" max="100"></div>
+              <div class="form-group"><label>Date</label><input type="date"></div>
+              <div class="form-group"><label>Color</label><input type="color" value="#7B2FBE" style="height:38px;padding:2px;"></div>
+              <div class="form-group"><label>Range</label><input type="range" min="0" max="100" value="50" style="accent-color:var(--gold-bright);"></div>
+              <div class="form-group"><label>Search</label><input type="search" placeholder="Search…"></div>
+              <div class="form-group" style="grid-column:span 2"><label>Textarea</label><textarea placeholder="Your message here…" rows="2"></textarea></div>
+              <div class="form-group" style="display:flex;gap:12px;align-items:center;">
+                <label style="display:flex;align-items:center;gap:6px;"><input type="checkbox" style="accent-color:var(--gold-bright);"> Newsletter</label>
+                <label style="display:flex;align-items:center;gap:6px;"><input type="radio" name="r" style="accent-color:var(--gold-bright);"> Option A</label>
+                <label style="display:flex;align-items:center;gap:6px;"><input type="radio" name="r" style="accent-color:var(--gold-bright);"> Option B</label>
+              </div>
+              <div class="form-group">
+                <button type="button">Submit Form</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <table class="quick-ref-table" style="margin:8px 0 6px">
+          <tr><th>Type</th><th>Use Case</th><th>Special Behavior</th></tr>
+          <tr><td>text</td><td>General single-line text</td><td>Default type</td></tr>
+          <tr><td>email</td><td>Email addresses</td><td>Validates @ format</td></tr>
+          <tr><td>password</td><td>Secrets</td><td>Masks characters</td></tr>
+          <tr><td>number</td><td>Integers/decimals</td><td>min, max, step</td></tr>
+          <tr><td>tel</td><td>Phone numbers</td><td>Numeric keyboard (mobile)</td></tr>
+          <tr><td>url</td><td>Web addresses</td><td>Validates URL format</td></tr>
+          <tr><td>date</td><td>Calendar date</td><td>Date picker UI</td></tr>
+          <tr><td>time</td><td>Time of day</td><td>Time picker UI</td></tr>
+          <tr><td>datetime-local</td><td>Date + time</td><td>Combined picker</td></tr>
+          <tr><td>checkbox</td><td>Boolean toggle</td><td>checked attribute</td></tr>
+          <tr><td>radio</td><td>One-of-many choice</td><td>Group by name</td></tr>
+          <tr><td>range</td><td>Slider / scale</td><td>min, max, step</td></tr>
+          <tr><td>color</td><td>Color picker</td><td>Returns #hex value</td></tr>
+          <tr><td>file</td><td>File upload</td><td>accept, multiple</td></tr>
+          <tr><td>hidden</td><td>Data not shown to user</td><td>Included in submit</td></tr>
+          <tr><td>search</td><td>Search box</td><td>Clear button (some browsers)</td></tr>
+          <tr><td>submit/reset/button</td><td>Form actions</td><td>Trigger form events</td></tr>
+        </table>
+
+        <div class="code-block" style="margin:0 0 8px">
+          <div class="code-block-header"><span class="code-lang-label">HTML</span><button class="copy-btn">Copy</button></div>
+          <pre><code><span class="tok-tag">&lt;form</span> <span class="tok-attr">action</span>=<span class="tok-str">"/submit"</span> <span class="tok-attr">method</span>=<span class="tok-str">"post"</span> <span class="tok-attr">novalidate</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;fieldset&gt;</span>
+    <span class="tok-tag">&lt;legend&gt;</span>Contact Info<span class="tok-tag">&lt;/legend&gt;</span>
+
+    <span class="tok-tag">&lt;label</span> <span class="tok-attr">for</span>=<span class="tok-str">"name"</span><span class="tok-tag">&gt;</span>Name<span class="tok-tag">&lt;/label&gt;</span>
+    <span class="tok-tag">&lt;input</span> <span class="tok-attr">type</span>=<span class="tok-str">"text"</span> <span class="tok-attr">id</span>=<span class="tok-str">"name"</span> <span class="tok-attr">name</span>=<span class="tok-str">"name"</span>
+           <span class="tok-attr">placeholder</span>=<span class="tok-str">"Jane Doe"</span> <span class="tok-attr">required</span>
+           <span class="tok-attr">minlength</span>=<span class="tok-str">"2"</span> <span class="tok-attr">maxlength</span>=<span class="tok-str">"50"</span><span class="tok-tag">&gt;</span>
+
+    <span class="tok-tag">&lt;label</span> <span class="tok-attr">for</span>=<span class="tok-str">"email"</span><span class="tok-tag">&gt;</span>Email<span class="tok-tag">&lt;/label&gt;</span>
+    <span class="tok-tag">&lt;input</span> <span class="tok-attr">type</span>=<span class="tok-str">"email"</span> <span class="tok-attr">id</span>=<span class="tok-str">"email"</span> <span class="tok-attr">name</span>=<span class="tok-str">"email"</span> <span class="tok-attr">required</span><span class="tok-tag">&gt;</span>
+
+    <span class="tok-tag">&lt;select</span> <span class="tok-attr">name</span>=<span class="tok-str">"topic"</span><span class="tok-tag">&gt;</span>
+      <span class="tok-tag">&lt;option</span> <span class="tok-attr">value</span>=<span class="tok-str">""</span><span class="tok-tag">&gt;</span>Choose a topic…<span class="tok-tag">&lt;/option&gt;</span>
+      <span class="tok-tag">&lt;optgroup</span> <span class="tok-attr">label</span>=<span class="tok-str">"Technical"</span><span class="tok-tag">&gt;</span>
+        <span class="tok-tag">&lt;option</span> <span class="tok-attr">value</span>=<span class="tok-str">"html"</span><span class="tok-tag">&gt;</span>HTML<span class="tok-tag">&lt;/option&gt;</span>
+        <span class="tok-tag">&lt;option</span> <span class="tok-attr">value</span>=<span class="tok-str">"css"</span><span class="tok-tag">&gt;</span>CSS<span class="tok-tag">&lt;/option&gt;</span>
+      <span class="tok-tag">&lt;/optgroup&gt;</span>
+    <span class="tok-tag">&lt;/select&gt;</span>
+
+    <span class="tok-tag">&lt;button</span> <span class="tok-attr">type</span>=<span class="tok-str">"submit"</span><span class="tok-tag">&gt;</span>Send<span class="tok-tag">&lt;/button&gt;</span>
+  <span class="tok-tag">&lt;/fieldset&gt;</span>
+<span class="tok-tag">&lt;/form&gt;</span></code></pre>
+        </div>
+        <div class="try-it-wrap" style="padding:0 0 6px">
+          <div class="try-it-label">Try It</div>
+          <textarea class="try-it" placeholder="&lt;form&gt;&#10;  &lt;label for=&quot;n&quot;&gt;Name:&lt;/label&gt;&#10;  &lt;input type=&quot;text&quot; id=&quot;n&quot; name=&quot;n&quot; required&gt;&#10;  &lt;input type=&quot;range&quot; min=&quot;0&quot; max=&quot;10&quot;&gt;&#10;  &lt;input type=&quot;color&quot;&gt;&#10;  &lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;&#10;&lt;/form&gt;"></textarea>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 4. TABLES -->
+  <section class="doc-section" id="tables-data">
+    <div class="section-header">
+      <h2><span class="section-icon">📊</span> <span data-i18n="lang-tables">Tables &amp; Data</span></h2>
+      <span class="section-toggle">▼</span>
+    </div>
+    <div class="section-body">
+      <p style="color:var(--text-secondary);margin-bottom:16px;font-size:0.95rem;">Tables organize tabular data — information with clear rows and columns. Never use tables for layout. Use <code>&lt;th scope="col/row"&gt;</code> for headers to aid screen readers.</p>
+
+      <article class="prop-card" id="table-structure">
+        <div class="prop-card-header"><h3>Table Structure</h3><span class="prop-tag tag-html">Data</span></div>
+        <div class="demo-area">
+          <div class="demo-header">Live Table Demo</div>
+          <div class="demo-content">
+            <table class="demo-table">
+              <caption style="font-family:var(--font-heading);font-size:0.85rem;color:var(--text-muted);margin-bottom:8px;caption-side:top;">CSS Property Reference</caption>
+              <thead>
+                <tr><th>Property</th><th>Value</th><th>Effect</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>color</td><td>red</td><td>Sets text color</td></tr>
+                <tr><td>font-size</td><td>16px</td><td>Sets text size</td></tr>
+                <tr><td>margin</td><td>auto</td><td>Centers block element</td></tr>
+                <tr><td>display</td><td>flex</td><td>Enables Flexbox</td></tr>
+              </tbody>
+              <tfoot>
+                <tr><td colspan="3" style="font-style:italic;font-size:0.8rem;color:var(--text-muted);">* Values shown are examples</td></tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <div class="code-block" style="margin:8px 0">
+          <div class="code-block-header"><span class="code-lang-label">HTML</span><button class="copy-btn">Copy</button></div>
+          <pre><code><span class="tok-tag">&lt;table&gt;</span>
+  <span class="tok-tag">&lt;caption&gt;</span>Table Title<span class="tok-tag">&lt;/caption&gt;</span>
+  <span class="tok-tag">&lt;thead&gt;</span>
+    <span class="tok-tag">&lt;tr&gt;</span>
+      <span class="tok-tag">&lt;th</span> <span class="tok-attr">scope</span>=<span class="tok-str">"col"</span><span class="tok-tag">&gt;</span>Name<span class="tok-tag">&lt;/th&gt;</span>
+      <span class="tok-tag">&lt;th</span> <span class="tok-attr">scope</span>=<span class="tok-str">"col"</span><span class="tok-tag">&gt;</span>Age<span class="tok-tag">&lt;/th&gt;</span>
+    <span class="tok-tag">&lt;/tr&gt;</span>
+  <span class="tok-tag">&lt;/thead&gt;</span>
+  <span class="tok-tag">&lt;tbody&gt;</span>
+    <span class="tok-tag">&lt;tr&gt;</span>
+      <span class="tok-tag">&lt;td&gt;</span>Alice<span class="tok-tag">&lt;/td&gt;</span>
+      <span class="tok-tag">&lt;td&gt;</span>28<span class="tok-tag">&lt;/td&gt;</span>
+    <span class="tok-tag">&lt;/tr&gt;</span>
+    <span class="tok-tag">&lt;tr&gt;</span>
+      <span class="tok-tag">&lt;td</span> <span class="tok-attr">colspan</span>=<span class="tok-str">"2"</span><span class="tok-tag">&gt;</span>Merged cell<span class="tok-tag">&lt;/td&gt;</span>
+    <span class="tok-tag">&lt;/tr&gt;</span>
+  <span class="tok-tag">&lt;/tbody&gt;</span>
+  <span class="tok-tag">&lt;tfoot&gt;</span>
+    <span class="tok-tag">&lt;tr&gt;</span><span class="tok-tag">&lt;td</span> <span class="tok-attr">colspan</span>=<span class="tok-str">"2"</span><span class="tok-tag">&gt;</span>Footer row<span class="tok-tag">&lt;/td&gt;</span><span class="tok-tag">&lt;/tr&gt;</span>
+  <span class="tok-tag">&lt;/tfoot&gt;</span>
+<span class="tok-tag">&lt;/table&gt;</span></code></pre>
+        </div>
+        <div class="try-it-wrap" style="padding:0 0 6px">
+          <div class="try-it-label">Try It</div>
+          <textarea class="try-it" placeholder="&lt;table border=&quot;1&quot;&gt;&#10;  &lt;tr&gt;&lt;th&gt;A&lt;/th&gt;&lt;th&gt;B&lt;/th&gt;&lt;/tr&gt;&#10;  &lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;/tr&gt;&#10;  &lt;tr&gt;&lt;td colspan=&quot;2&quot;&gt;Merged&lt;/td&gt;&lt;/tr&gt;&#10;&lt;/table&gt;"></textarea>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ══ DIVIDER ══ -->
+  <div class="ornament-divider">✦ ✦ ✦ ✦ ✦</div>
+
+  <!-- ══════════════════════════════════════════════════════
+       ██  CSS  SECTIONS
+       ══════════════════════════════════════════════════════ -->
+
+  <!-- CSS FUNDAMENTALS -->
+  <section class="doc-section" id="css-fundamentals">
+    <div class="section-header">
+      <h2><span class="section-icon">🎨</span> <span data-i18n="lang-css-fund">CSS Fundamentals</span> <span class="section-badge">CSS</span></h2>
+      <span class="section-toggle">▼</span>
+    </div>
+    <div class="section-body">
+      <p style="color:var(--text-secondary);margin-bottom:16px;font-size:0.95rem;">CSS (Cascading Style Sheets) controls the visual presentation of HTML. Three fundamental concepts govern how styles are applied: the <strong>Cascade</strong>, <strong>Specificity</strong>, and <strong>Inheritance</strong>.</p>
+
+      <article class="prop-card" id="cascade-specificity">
+        <div class="prop-card-header"><h3>Cascade, Specificity & Inheritance</h3><span class="prop-tag tag-css">Core</span></div>
+        <div class="prop-description">
+          <p>When multiple rules target the same element, <strong>specificity</strong> determines which wins. Think of it as a score: <code>inline style (1000) > #id (100) > .class / [attr] / :pseudo (10) > element (1)</code>.</p>
+          <p><strong>The Cascade</strong> then resolves ties by origin (user-agent → user → author) and source order — later rules win. <strong>Inheritance</strong> means children automatically receive certain parent properties (color, font-family) but not others (margin, border).</p>
+        </div>
+
+        <!-- Specificity diagram -->
+        <div class="diagram-wrap" style="padding:0 18px 12px">
+          <div class="diagram-title">Specificity Score Visual</div>
+          <div class="specificity-diagram">
+            <div class="spec-bar-group">
+              <div class="spec-bar bar-0"></div>
+              <div class="spec-label"><div class="spec-value">0</div>*</div>
+            </div>
+            <div class="spec-bar-group">
+              <div class="spec-bar bar-1"></div>
+              <div class="spec-label"><div class="spec-value">1</div>element</div>
+            </div>
+            <div class="spec-bar-group">
+              <div class="spec-bar bar-10"></div>
+              <div class="spec-label"><div class="spec-value">10</div>.class</div>
+            </div>
+            <div class="spec-bar-group">
+              <div class="spec-bar bar-100"></div>
+              <div class="spec-label"><div class="spec-value">100</div>#id</div>
+            </div>
+            <div class="spec-bar-group">
+              <div class="spec-bar bar-1000"></div>
+              <div class="spec-label"><div class="spec-value">1000</div>inline</div>
+            </div>
+          </div>
+
+          <!-- Interactive specificity calculator -->
+          <div style="margin-top:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+            <label style="font-family:var(--font-code);font-size:0.75rem;color:var(--text-muted);">Calculate:</label>
+            <input id="spec-input" type="text" placeholder="e.g. nav > ul.menu li:hover"
+              style="flex:1;min-width:200px;background:var(--bg-code);border:1px solid var(--border-subtle);color:var(--text-primary);font-family:var(--font-code);font-size:0.82rem;padding:6px 10px;border-radius:var(--radius-sm);outline:none;">
+            <span style="font-family:var(--font-code);font-size:0.82rem;color:var(--accent);" id="spec-display">(0, 0, 0)</span>
+          </div>
+        </div>
+
+        <div class="code-block" style="margin:0 0 8px">
+          <div class="code-block-header"><span class="code-lang-label">CSS</span><button class="copy-btn">Copy</button></div>
+          <pre><code><span class="tok-com">/* Specificity examples */</span>
+<span class="tok-sel">*</span>           { <span class="tok-prop">color</span>: <span class="tok-val">black</span>; }     <span class="tok-com">/* 0,0,0 */</span>
+<span class="tok-sel">p</span>           { <span class="tok-prop">color</span>: <span class="tok-val">gray</span>; }      <span class="tok-com">/* 0,0,1 */</span>
+<span class="tok-sel">.text</span>       { <span class="tok-prop">color</span>: <span class="tok-val">blue</span>; }      <span class="tok-com">/* 0,1,0 */</span>
+<span class="tok-sel">p.text</span>      { <span class="tok-prop">color</span>: <span class="tok-val">green</span>; }     <span class="tok-com">/* 0,1,1 */</span>
+<span class="tok-sel">#header</span>     { <span class="tok-prop">color</span>: <span class="tok-val">purple</span>; }    <span class="tok-com">/* 1,0,0 */</span>
+
+<span class="tok-com">/* Inline style beats all (unless !important) */</span>
+<span class="tok-com">/* &lt;p style="color:red"&gt; → wins */</span>
+
+<span class="tok-com">/* !important breaks the cascade (use sparingly) */</span>
+<span class="tok-sel">p</span> { <span class="tok-prop">color</span>: <span class="tok-val">red</span> <span class="tok-key">!important</span>; }</code></pre>
+        </div>
+        <div class="try-it-wrap" style="padding:0 0 6px">
+          <div class="try-it-label">Try It — CSS Syntax</div>
+          <textarea class="try-it" placeholder="/* Basic CSS rule */&#10;selector {&#10;  property: value;&#10;  another-property: value;&#10;}&#10;&#10;/* Multiple selectors */&#10;h1, h2, h3 {&#10;  font-family: serif;&#10;}"></textarea>
+        </div>
+      </article>
+
+      <!-- Linking CSS -->
+      <article class="prop-card">
+        <div class="prop-card-header"><h3>Three Ways to Add CSS</h3><span class="prop-tag tag-css">Basics</span></div>
+        <div class="prop-description"><p>External stylesheets are best for production — they cache separately and keep concerns separated. Internal <code>&lt;style&gt;</code> blocks suit small prototypes. Inline styles have highest specificity but are impossible to maintain at scale.</p></div>
+        <div class="code-block" style="margin:0 0 8px">
+          <div class="code-block-header"><span class="code-lang-label">HTML + CSS</span><button class="copy-btn">Copy</button></div>
+          <pre><code><span class="tok-com">&lt;!-- 1. External (recommended) --&gt;</span>
+<span class="tok-tag">&lt;link</span> <span class="tok-attr">rel</span>=<span class="tok-str">"stylesheet"</span> <span class="tok-attr">href</span>=<span class="tok-str">"style.css"</span><span class="tok-tag">&gt;</span>
+
+<span class="tok-com">&lt;!-- 2. Internal --&gt;</span>
+<span class="tok-tag">&lt;style&gt;</span>
+  <span class="tok-sel">body</span> { <span class="tok-prop">margin</span>: <span class="tok-val">0</span>; }
+<span class="tok-tag">&lt;/style&gt;</span>
+
+<span class="tok-com">&lt;!-- 3. Inline (avoid for layout) --&gt;</span>
+<span class="tok-tag">&lt;p</span> <span class="tok-attr">style</span>=<span class="tok-str">"color: red; font-size: 18px;"</span><span class="tok-tag">&gt;</span>Text<span class="tok-tag">&lt;/p&gt;</span></code></pre>
+        </div>
+        <div class="try-it-wrap" style="padding:0 0 6px">
+          <div class="try-it-label">Try It</div>
+          <textarea class="try-it" placeholder="/* In style.css */&#10;body {&#10;  font-family: Georgia, serif;&#10;  background: #1a1a2e;&#10;  color: #eee;&#10;  margin: 0;&#10;  padding: 20px;&#10;}"></textarea>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CSS SELECTORS -->
+  <section class="doc-section" id="css-selectors">
+    <div class="section-header">
+      <h2><span class="section-icon">🎯</span> <span data-i18n="lang-selectors">CSS Selectors</span></h2>
+      <span class="section-toggle">▼</span>
+    </div>
+    <div class="section-body">
+      <p style="color:var(--text-secondary);margin-bottom:16px;font-size:0.95rem;">Selectors are patterns that match HTML elements. Mastering selectors is mastering CSS — you can target virtually any element without touching your HTML.</p>
+
+      <!-- Tabs for selector categories -->
+      <div class="tab-group">
+        <div class="tab-bar">
+          <button class="tab-btn active" data-tab="basic">Basic</button>
+          <button class="tab-btn" data-tab="combinators">Combinators</button>
+          <button class="tab-btn" data-tab="pseudo-class">Pseudo-Classes</button>
+          <button class="tab-btn" data-tab="pseudo-el">Pseudo-Elements</button>
+          <button class="tab-btn" data-tab="attribute">Attribute</button>
+        </div>
+
+        <div class="tab-panel active" data-panel="basic">
+          <div class="selector-grid">
+            <div class="selector-item"><div class="selector-name">*</div><div class="selector-desc">Universal — matches every element</div></div>
+            <div class="selector-item"><div class="selector-name">element</div><div class="selector-desc">Type selector — e.g. <code>p</code>, <code>div</code>, <code>h1</code></div></div>
+            <div class="selector-item"><div class="selector-name">.class</div><div class="selector-desc">Class selector — matches class attribute</div></div>
+            <div class="selector-item"><div class="selector-name">#id</div><div class="selector-desc">ID selector — unique per page</div></div>
+            <div class="selector-item"><div class="selector-name">A, B</div><div class="selector-desc">Group — applies rule to both A and B</div></div>
+          </div>
+          <div class="code-block" style="margin:10px 0 0">
+            <div class="code-block-header"><span class="code-lang-label">CSS</span><button class="copy-btn">Copy</button></div>
+            <pre><code><span class="tok-sel">*</span>       { <span class="tok-prop">box-sizing</span>: <span class="tok-val">border-box</span>; }
+<span class="tok-sel">p</span>       { <span class="tok-prop">margin</span>: <span class="tok-val">0 0 1em</span>; }
+<span class="tok-sel">.card</span>   { <span class="tok-prop">border-radius</span>: <span class="tok-val">8px</span>; }
+<span class="tok-sel">#hero</span>   { <span class="tok-prop">min-height</span>: <span class="tok-val">100vh</span>; }
+<span class="tok-sel">h1, h2</span>  { <span class="tok-prop">font-family</span>: <span class="tok-val">serif</span>; }</code></pre>
+          </div>
+          <div class="try-it-wrap" style="margin-top:8px">
+            <div class="try-it-label">Try It</div>
+            <textarea class="try-it" placeholder="/* Target all paragraphs */&#10;p { color: teal; }&#10;&#10;/* Target elements with class */&#10;.highlight { background: yellow; }&#10;&#10;/* Target unique ID */&#10;#special { font-weight: bold; }"></textarea>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-panel="combinators">
+          <div class="selector-grid">
+            <div class="selector-item"><div class="selector-name">A B</div><div class="selector-desc">Descendant — B anywhere inside A</div></div>
+            <div class="selector-item"><div class="selector-name">A &gt; B</div><div class="selector-desc">Child — B is a direct child of A</div></div>
+            <div class="selector-item"><div class="selector-name">A + B</div><div class="selector-desc">Adjacent sibling — B immediately after A</div></div>
+            <div class="selector-item"><div class="selector-name">A ~ B</div><div class="selector-desc">General sibling — all B siblings after A</div></div>
+          </div>
+          <div class="code-block" style="margin:10px 0 0">
+            <div class="code-block-header"><span class="code-lang-label">CSS</span><button class="copy-btn">Copy</button></div>
+            <pre><code><span class="tok-sel">nav a</span>           { <span class="tok-prop">color</span>: <span class="tok-val">white</span>; }       <span class="tok-com">/* any a inside nav */</span>
+<span class="tok-sel">ul > li</span>         { <span class="tok-prop">list-style</span>: <span class="tok-val">none</span>; }   <span class="tok-com">/* direct li children only */</span>
+<span class="tok-sel">h2 + p</span>          { <span class="tok-prop">margin-top</span>: <span class="tok-val">0</span>; }     <span class="tok-com">/* p right after h2 */</span>
+<span class="tok-sel">.card ~ .card</span>   { <span class="tok-prop">margin-top</span>: <span class="tok-val">16px</span>; } <span class="tok-com">/* all cards after first */</span></code></pre>
+          </div>
+          <div class="try-it-wrap" style="margin-top:8px">
+            <div class="try-it-label">Try It</div>
+            <textarea class="try-it" placeholder="/* Style all links inside main */&#10;main a { color: purple; }&#10;&#10;/* Only direct children */&#10;.container > p { font-size: 1.1rem; }&#10;&#10;/* First paragraph after h2 */&#10;h2 + p { font-weight: bold; }"></textarea>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-panel="pseudo-class">
+          <div class="selector-grid">
+            <div class="selector-item"><div class="selector-name">:hover</div><div class="selector-desc">Mouse pointer over element</div></div>
+            <div class="selector-item"><div class="selector-name">:focus</div><div class="selector-desc">Element has keyboard focus</div></div>
+            <div class="selector-item"><div class="selector-name">:active</div><div class="selector-desc">Element being clicked</div></div>
+            <div class="selector-item"><div class="selector-name">:visited</div><div class="selector-desc">Link already visited</div></div>
+            <div class="selector-item"><div class="selector-name">:first-child</div><div class="selector-desc">First child of its parent</div></div>
+            <div class="selector-item"><div class="selector-name">:last-child</div><div class="selector-desc">Last child of its parent</div></div>
+            <div class="selector-item"><div class="selector-name">:nth-child(n)</div><div class="selector-desc">nth child — accepts formulas like 2n+1</div></div>
+            <div class="selector-item"><div class="selector-name">:not(sel)</div><div class="selector-desc">Everything that doesn't match sel</div></div>
+            <div class="selector-item"><div class="selector-name">:is(A, B)</div><div class="selector-desc">Matches A or B — no specificity penalty</div></div>
+            <div class="selector-item"><div class="selector-name">:has(sel)</div><div class="selector-desc">Parent that contains a matching child</div></div>
+            <div class="selector-item"><div class="selector-name">:checked</div><div class="selector-desc">Checked checkbox or radio</div></div>
+            <div class="selector-item"><div class="selector-name">:disabled</div><div class="selector-desc">Disabled form element</div></div>
+            <div class="selector-item"><div class="selector-name">:empty</div><div class="selector-desc">Element with no children</div></div>
+            <div class="selector-item"><div class="selector-name">:root</div><div class="selector-desc">The &lt;html&gt; element — use for CSS vars</div></div>
+            <div class="selector-item"><div class="selector-name">:target</div><div class="selector-desc">Element matching current URL #hash</div></div>
+            <div class="selector-item"><div class="selector-name">:placeholder-shown</div><div class="selector-desc">Input showing placeholder text</div></div>
+          </div>
+          <div class="code-block" style="margin:10px 0 0">
+            <div class="code-block-header"><span class="code-lang-label">CSS</span><button class="copy-btn">Copy</button></div>
+            <pre><code><span class="tok-sel">a:hover</span>             { <span class="tok-prop">color</span>: <span class="tok-val">gold</span>; }
+<span class="tok-sel">input:focus</span>         { <span class="tok-prop">outline</span>: <span class="tok-val">2px solid purple</span>; }
+<span class="tok-sel">li:nth-child(odd)</span>   { <span class="tok-prop">background</span>: <span class="tok-val">rgba(0,0,0,0.05)</span>; }
+<span class="tok-sel">p:not(.intro)</span>       { <span class="tok-prop">font-size</span>: <span class="tok-val">0.9rem</span>; }
+<span class="tok-sel">section:has(img)</span>    { <span class="tok-prop">padding</span>: <span class="tok-val">0</span>; } <span class="tok-com">/* modern! */</span></code></pre>
+          </div>
+          <div class="try-it-wrap" style="margin-top:8px">
+            <div class="try-it-label">Try It</div>
+            <textarea class="try-it" placeholder="button:hover {&#10;  background: purple;&#10;  transform: translateY(-2px);&#10;}&#10;&#10;li:nth-child(even) {&#10;  background: rgba(255,255,255,0.05);&#10;}"></textarea>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-panel="pseudo-el">
+          <div class="selector-grid">
+            <div class="selector-item"><div class="selector-name">::before</div><div class="selector-desc">Generated content before element content</div></div>
+            <div class="selector-item"><div class="selector-name">::after</div><div class="selector-desc">Generated content after element content</div></div>
+            <div class="selector-item"><div class="selector-name">::first-letter</div><div class="selector-desc">First character of a block element</div></div>
+            <div class="selector-item"><div class="selector-name">::first-line</div><div class="selector-desc">First rendered line of text</div></div>
+            <div class="selector-item"><div class="selector-name">::selection</div><div class="selector-desc">User-selected (highlighted) text</div></div>
+            <div class="selector-item"><div class="selector-name">::placeholder</div><div class="selector-desc">Placeholder text in inputs</div></div>
+            <div class="selector-item"><div class="selector-name">::marker</div><div class="selector-desc">List item bullet or number</div></div>
+            <div class="selector-item"><div class="selector-name">::backdrop</div><div class="selector-desc">Behind fullscreen / &lt;dialog&gt; elements</div></div>
+          </div>
+          <div class="code-block" style="margin:10px 0 0">
+            <div class="code-block-header"><span class="code-lang-label">CSS</span><button class="copy-btn">Copy</button></div>
+            <pre><code><span class="tok-sel">.card::before</span> {
+  <span class="tok-prop">content</span>: <span class="tok-str">'★ '</span>;
+  <span class="tok-prop">color</span>: <span class="tok-val">gold</span>;
+}
+
+<span class="tok-sel">p::first-letter</span> {
+  <span class="tok-prop">font-size</span>: <span class="tok-val">3em</span>;
+  <span class="tok-prop">float</span>: <span class="tok-val">left</span>;
+  <span class="tok-prop">line-height</span>: <span class="tok-val">1</span>;
+  <span class="tok-prop">margin-right</span>: <span class="tok-val">8px</span>;
+}
+
+<span class="tok-sel">::selection</span> {
+  <span class="tok-prop">background</span>: <span class="tok-val">purple</span>;
+  <span class="tok-prop">color</span>: <span class="tok-val">white</span>;
+}
+
+<span class="tok-sel">input::placeholder</span> { <span class="tok-prop">opacity</span>: <span class="tok-val">0.5</span>; }</code></pre>
+          </div>
+          <div class="try-it-wrap" style="margin-top:8px">
+            <div class="try-it-label">Try It</div>
+            <textarea class="try-it" placeholder="/* Add ornament before headings */&#10;h2::before {&#10;  content: '⚜ ';&#10;  color: gold;&#10;}&#10;&#10;/* Style selected text */&#10;::selection {&#10;  background: #7B2FBE;&#10;  color: white;&#10;}"></textarea>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-panel="attribute">
+          <div class="selector-grid">
+            <div class="selector-item"><div class="selector-name">[attr]</div><div class="selector-desc">Has attribute (any value)</div></div>
+            <div class="selector-item"><div class="selector-name">[attr="val"]</div><div class="selector-desc">Exact value match</div></div>
+            <div class="selector-item"><div class="selector-name">[attr~="val"]</div><div class="selector-desc">Value in space-separated list</div></div>
+            <div class="selector-item"><div class="selector-name">[attr|="val"]</div><div class="selector-desc">Starts with val or val-</div></div>
+            <div class="selector-item"><div class="selector-name">[attr^="val"]</div><div class="selector-desc">Starts with val</div></div>
+            <div class="selector-item"><div class="selector-name">[attr$="val"]</div><div class="selector-desc">Ends with val</div></div>
+            <div class="selector-item"><div class="selector-name">[attr*="val"]</div><div class="selector-desc">Contains val anywhere</div></div>
+            <div class="selector-item"><div class="selector-name">[attr="val" i]</div><div class="selector-desc">Case-insensitive match</div></div>
+          </div>
+          <div class="code-block" style="margin:10px 0 0">
+            <div class="code-block-header"><span class="code-lang-label">CSS</span><button class="copy-btn">Copy</button></div>
+            <pre><code><span class="tok-sel">a[target="_blank"]</span>   { <span class="tok-prop">color</span>: <span class="tok-val">teal</span>; }
+<span class="tok-sel">input[required]</span>      { <span class="tok-prop">border-color</span>: <span class="tok-val">red</span>; }
+<span class="tok-sel">a[href^="https"]</span>     { <span class="tok-prop">padding-left</span>: <span class="tok-val">20px</span>; } <span class="tok-com">/* secure link */</span>
+<span class="tok-sel">a[href$=".pdf"]</span>      { <span class="tok-prop">color</span>: <span class="tok-val">orange</span>; }        <span class="tok-com">/* PDF link */</span>
+<span class="tok-sel">[data-theme="dark"]</span> { <span class="tok-prop">background</span>: <span class="tok-val">#000</span>; }</code></pre>
+          </div>
+          <div class="try-it-wrap" style="margin-top:8px">
+            <div class="try-it-label">Try It</div>
+            <textarea class="try-it" placeholder="/* Style external links */&#10;a[href^=&quot;http&quot;]::after {&#10;  content: ' ↗';&#10;  font-size: 0.7em;&#10;}&#10;&#10;/* Highlight required fields */&#10;input[required] {&#10;  border-left: 3px solid gold;&#10;}"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CSS VARIABLES -->
+  <section class="doc-section" id="css-variables">
+    <div class="section-header">
+      <h2><span class="section-icon">🔧</span> <span data-i18n="lang-variables">CSS Variables (Custom Properties)</span></h2>
+      <span class="section-toggle">▼</span>
+    </div>
+    <div class="section-body">
+      <p style="color:var(--text-secondary);margin-bottom:16px;font-size:0.95rem;">CSS Custom Properties (variables) store reusable values. Define them with <code>--name: value</code>, access them with <code>var(--name)</code>. They cascade, inherit, and can be changed with JavaScript — enabling powerful theming.</p>
+
+      <article class="prop-card" id="custom-props">
+        <div class="prop-card-header"><h3>Defining & Using Variables</h3><span class="prop-tag tag-css">Modern</span></div>
+        <div class="prop-description">
+          <p>Declare global variables on <code>:root</code> (the <code>&lt;html&gt;</code> element). Override them on any descendant — this is how dark/light mode toggling works on this very page!</p>
+        </div>
+        <div class="code-block" style="margin:0 0 8px">
+          <div class="code-block-header"><span class="code-lang-label">CSS</span><button class="copy-btn">Copy</button></div>
+          <pre><code><span class="tok-com">/* Define globally */</span>
+<span class="tok-sel">:root</span> {
+  <span class="tok-prop">--color-primary</span>: <span class="tok-val">#7B2FBE</span>;
+  <span class="tok-prop">--color-accent</span>:  <span class="tok-val">#D4AF37</span>;
+  <span class="tok-prop">--font-body</span>:     <span class="tok-val">'EB Garamond', serif</span>;
+  <span class="tok-prop">--spacing-md</span>:    <span class="tok-val">16px</span>;
+  <span class="tok-prop">--radius</span>:        <span class="tok-val">8px</span>;
+}
+
+<span class="tok-com">/* Use them */</span>
+<span class="tok-sel">.button</span> {
+  <span class="tok-prop">background</span>:    <span class="tok-fn">var</span>(<span class="tok-prop">--color-primary</span>);
+  <span class="tok-prop">color</span>:         <span class="tok-fn">var</span>(<span class="tok-prop">--color-accent</span>);
+  <span class="tok-prop">padding</span>:       <span class="tok-fn">var</span>(<span class="tok-prop">--spacing-md</span>);
+  <span class="tok-prop">border-radius</span>: <span class="tok-fn">var</span>(<span class="tok-prop">--radius</span>);
+}
+
+<span class="tok-com">/* Dark mode override */</span>
+<span class="tok-sel">[data-theme="dark"]</span> {
+  <span class="tok-prop">--bg</span>: <span class="tok-val">#0E0818</span>;
+  <span class="tok-prop">--text</span>: <span class="tok-val">#FAF5E4</span>;
+}
+
+<span class="tok-com">/* Fallback value if var not defined */</span>
+<span class="tok-sel">p</span> { <span class="tok-prop">color</span>: <span class="tok-fn">var</span>(<span class="tok-prop">--text-color</span>, <span class="tok-val">black</span>); }</code></pre>
+        </div>
+        <div class="try-it-wrap" style="padding:0 0 6px">
+          <div class="try-it-label">Try It</div>
+          <textarea class="try-it" placeholder=":root {&#10;  --primary: #7B2FBE;&#10;  --gold: #D4AF37;&#10;  --gap: 16px;&#10;}&#10;&#10;.card {&#10;  background: var(--primary);&#10;  color: var(--gold);&#10;  padding: var(--gap);&#10;}"></textarea>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- BOX MODEL -->
+  <section class="doc-section" id="box-model">
+    <div class="section-header">
+      <h2><span class="section-icon">📦</span> <span data-i18n="lang-boxmodel">Box Model</span></h2>
+      <span class="section-toggle">▼</span>
+    </div>
+    <div class="section-body">
+      <p style="color:var(--text-secondary);margin-bottom:16px;font-size:0.95rem;">Every HTML element is a rectangular box. The box model defines its four layers: <strong>content</strong>, <strong>padding</strong>, <strong>border</strong>, and <strong>margin</strong>. Understanding this is fundamental to all CSS layout.</p>
+
+      <article class="prop-card" id="box-model-diagram">
+        <div class="prop-card-header"><h3>The Four Layers</h3><span class="prop-tag tag-css">Layout</span></div>
+        <!-- Visual diagram -->
+        <div class="box-model-diagram">
+          <div class="bm-margin" style="position:relative;">
+            <span class="bm-label">margin</span>
+            <div class="bm-border" style="position:relative;">
+              <span style="position:absolute;top:3px;left:6px;font-family:var(--font-code);font-size:0.58rem;color:var(--text-muted);">border</span>
+              <div class="bm-padding" style="position:relative;">
+                <span style="position:absolute;top:3px;left:6px;font-family:var(--font-code);font-size:0.58rem;color:var(--text-muted);">padding</span>
+                <div class="bm-content">content</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="code-block" style="margin:0 0 8px">
+          <div class="code-block-header"><span class="code-lang-label">CSS</span><button class="copy-btn">Copy</button></div>
+          <pre><code><span class="tok-com">/* The box-sizing fix — use everywhere */</span>
+<span class="tok-sel">*</span> { <span class="tok-prop">box-sizing</span>: <span class="tok-val">border-box</span>; }
+<span class="tok-com">/* border-box includes padding+border in width */</span>
+
+<span class="tok-sel">.box</span> {
+  <span class="tok-prop">width</span>:   <span class="tok-val">300px</span>;      <span class="tok-com">/* content width */</span>
+  <span class="tok-prop">height</span>:  <span class="tok-val">200px</span>;
+
+  <span class="tok-prop">padding</span>: <span class="tok-val">20px</span>;       <span class="tok-com">/* all sides */</span>
+  <span class="tok-prop">padding</span>: <span class="tok-val">10px 20px</span>;  <span class="tok-com">/* top/bottom left/right */</span>
+  <span class="tok-prop">padding</span>: <span class="tok-val">5px 10px 15px 20px</span>; <span class="tok-com">/* T R B L (clockwise) */</span>
+
+  <span class="tok-prop">border</span>:       <span class="tok-val">2px solid gold</span>;
+  <span class="tok-prop">border-radius</span>: <span class="tok-val">8px</span>;
+
+  <span class="tok-prop">margin</span>:   <span class="tok-val">20px</span>;        <span class="tok-com">/* outer spacing */</span>
+  <span class="tok-prop">margin</span>:   <span class="tok-val">0 auto</span>;      <span class="tok-com">/* center horizontally */</span>
+}</code></pre>
+        </div>
+        <div class="try-it-wrap" style="padding:0 0 6px">
+          <div class="try-it-label">Try It</div>
+          <textarea class="try-it" placeholder=".box {&#10;  width: 200px;&#10;  padding: 20px;&#10;  border: 3px solid gold;&#10;  border-radius: 12px;&#10;  margin: 0 auto;&#10;  box-sizing: border-box;&#10;}"></textarea>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- FLEXBOX -->
+  <section class="doc-section" id="flexbox">
+    <div class="section-header">
+      <h2><span class="section-icon">↔️</span> <span data-i18n="lang-flexbox">Flexbox</span></h2>
+      <span class="section-toggle">▼</span>
+    </div>
+    <div class="section-body">
+      <p style="color:var(--text-secondary);margin-bottom:16px;font-size:0.95rem;">Flexbox is a one-dimensional layout system — it handles rows OR columns. Perfect for navigation bars, centering content, distributing space, and component-level layouts.</p>
+
+      <article class="prop-card">
+        <div class="prop-card-header"><h3>Flex Container Properties</h3><span class="prop-tag tag-css">Layout</span></div>
+        <div class="demo-area">
+          <div class="demo-header">Live Flex Demo — hover items</div>
+          <div class="demo-content">
+            <div class="flex-diagram" style="justify-content:space-around;">
+              <div class="flex-item-demo">Item 1</div>
+              <div class="flex-item-demo">Item 2</div>
+              <div class="flex-item-demo" style="padding:10px 24px;">Item 3 (wider)</div>
+              <div class="flex-item-demo">Item 4</div>
+            </div>
+          </div>
+        </div>
+        <table class="quick-ref-table" style="margin:8px 0">
+          <tr><th>Property</th><th>Values</th><th>Effect</th></tr>
+          <tr><td>display</td><td>flex | inline-flex</td><td>Enables flexbox</td></tr>
+          <tr><td>flex-direction</td><td>row | column | row-reverse | column-reverse</td><td>Main axis direction</td></tr>
+          <tr><td>flex-wrap</td><td>nowrap | wrap | wrap-reverse</td><td>Allow items to wrap</td></tr>
+          <tr><td>justify-content</td><td>flex-start | flex-end | center | space-between | space-around | space-evenly</td><td>Align on main axis</td></tr>
+          <tr><td>align-items</td><td>flex-start | flex-end | center | stretch | baseline</td><td>Align on cross axis</td></tr>
+          <tr><td>align-content</td><td>same as justify-content</td><td>Multi-line alignment</td></tr>
+          <tr><td>gap</td><td>length</td><td>Space between items</td></tr>
+        </table>
+        <div class="code-block" style="margin:0 0 8px">
+          <div class="code-block-header"><span class="code-lang-label">CSS</span><button class="copy-btn">Copy</button></div>
+          <pre><code><span class="tok-com">/* Container */</span>
+<span class="tok-sel">.container</span> {
+  <span class="tok-prop">display</span>:         <span class="tok-val">flex</span>;
+  <span class="tok-prop">flex-direction</span>:  <span class="tok-val">row</span>;         <span class="tok-com">/* default */</span>
+  <span class="tok-prop">flex-wrap</span>:       <span class="tok-val">wrap</span>;
+  <span class="tok-prop">justify-content</span>: <span class="tok-val">space-between</span>;
+  <span class="tok-prop">align-items</span>:     <span class="tok-val">center</span>;
+  <span class="tok-prop">gap</span>:             <span class="tok-val">16px</span>;
+}
+
+<span class="tok-com">/* Items */</span>
+<span class="tok-sel">.item</span> {
+  <span class="tok-prop">flex</span>:       <span class="tok-val">1</span>;              <span class="tok-com">/* grow, shrink, basis */</span>
+  <span class="tok-prop">flex-grow</span>:  <span class="tok-val">1</span>;
+  <span class="tok-prop">flex-shrink</span>: <span class="tok-val">0</span>;
+  <span class="tok-prop">flex-basis</span>: <span class="tok-val">200px</span>;
+  <span class="tok-prop">align-self</span>: <span class="tok-val">flex-start</span>;  <span class="tok-com">/* override container */</span>
+  <span class="tok-prop">order</span>:      <span class="tok-val">-1</span>;            <span class="tok-com">/* visual order */</span>
+}
+
+<span class="tok-com">/* Center anything — classic flex trick */</span>
+<span class="tok-sel">.center</span> {
+  <span class="tok-prop">display</span>:         <span class="tok-val">flex</span>;
+  <span class="tok-prop">justify-content</span>: <span class="tok-val">center</span>;
+  <span class="tok-prop">align-items</span>:     <span class="tok-val">center</span>;
+}</code></pre>
+        </div>
+        <div class="try-it-wrap" style="padding:0 0 6px">
+          <div class="try-it-label">Try It</div>
+          <textarea class="try-it" placeholder=".nav {&#10;  display: flex;&#10;  justify-content: space-between;&#10;  align-items: center;&#10;  gap: 16px;&#10;  padding: 16px;&#10;}&#10;&#10;.nav-link {&#10;  flex-shrink: 0;&#10;}"></textarea>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CSS GRID -->
+  <section class="doc-section" id="css-grid">
+    <div class="section-header">
+      <h2><span class="section-icon">🔲</span> <span data-i18n="lang-grid">CSS Grid</span></h2>
+      <span class="section-toggle">▼</span>
+    </div>
+    <div class="section-body">
+      <p style="color:var(--text-secondary);margin-bottom:16px;font-size:0.95rem;">CSS Grid is a two-dimensional layout system — it handles both rows AND columns simultaneously. Best for page-level layouts, dashboards, and complex card arrangements.</p>
+
+      <article class="prop-card">
+        <div class="prop-card-header"><h3>Grid Layout</h3><span class="prop-tag tag-css">Layout</span></div>
+        <div class="demo-area">
+          <div class="demo-header">Live Grid Demo</div>
+          <div class="demo-content">
+            <div class="grid-demo">
+              <div class="grid-cell span3" style="background:linear-gradient(135deg,var(--plum-bright),var(--gold-mid));color:var(--cream);">Header (span 3)</div>
+              <div class="grid-cell">Card 1</div>
+              <div class="grid-cell span2">Card 2 (span 2)</div>
+              <div class="grid-cell span2">Card 3 (span 2)</div>
+              <div class="grid-cell">Card 4</div>
+              <div class="grid-cell span3" style="background:rgba(212,175,55,0.08);">Footer (span 3)</div>
+            </div>
+          </div>
+        </div>
+        <div class="code-block" style="margin:8px 0">
+          <div class="code-block-header"><span class="code-lang-label">CSS</span><button class="copy-btn">Copy</button></div>
+          <pre><code><span class="tok-com">/* Container */</span>
+<span class="tok-sel">.grid</span> {
+  <span class="tok-prop">display</span>:               <span class="tok-val">grid</span>;
+  <span class="tok-prop">grid-template-columns</span>: <span class="tok-val">repeat(3, 1fr)</span>;    <span class="tok-com">/* 3 equal columns */</span>
+  <span class="tok-prop">grid-template-columns</span>: <span class="tok-val">200px auto 1fr</span>;  <span class="tok-com">/* mixed sizing */</span>
+  <span class="tok-prop">grid-template-rows</span>:    <span class="tok-val">auto</span>;
+  <span class="tok-prop">gap</span>:                   <span class="tok-val">16px</span>;              <span class="tok-com">/* row-gap column-gap */</span>
+}
+
+<span class="tok-com">/* Named areas (great for page layout) */</span>
+<span class="tok-sel">.page</span> {
+  <span class="tok-prop">display</span>: <span class="tok-val">grid</span>;
+  <span class="tok-prop">grid-template-areas</span>:
+    <span class="tok-str">"header header"</span>
+    <span class="tok-str">"sidebar main"</span>
+    <span class="tok-str">"footer footer"</span>;
+  <span class="tok-prop">grid-template-columns</span>: <span class="tok-val">240px 1fr</span>;
+}
+
+<span class="tok-sel">.header</span>  { <span class="tok-prop">grid-area</span>: <span class="tok-val">header</span>; }
+<span class="tok-sel">.sidebar</span> { <span class="tok-prop">grid-area</span>: <span class="tok-val">sidebar</span>; }
+<span class="tok-sel">.main</span>    { <span class="tok-prop">grid-area</span>: <span class="tok-val">main</span>; }
+<span class="tok-sel">.footer</span>  { <span class="tok-prop">grid-area</span>: <span class="tok-val">footer</span>; }
+
+<span class="tok-com">/* Item spanning */</span>
+<span class="tok-sel">.hero</span> {
+  <span class="tok-prop">grid-column</span>: <span class="tok-val">1 / -1</span>;   <span class="tok-com">/* span full width */</span>
+  <span class="tok-prop">grid-row</span>:    <span class="tok-val">span 2</span>;
+}</code></pre>
+        </div>
+        <div class="try-it-wrap" style="padding:0 0 6px">
+          <div class="try-it-label">Try It</div>
+          <textarea class="try-it" placeholder=".cards {&#10;  display: grid;&#10;  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));&#10;  gap: 20px;&#10;}&#10;&#10;/* Responsive without media queries! */"></textarea>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ANIMATIONS -->
+  <section class="doc-section" id="animations">
+    <div class="section-header">
+      <h2><span class="section-icon">✨</span> <span data-i18n="lang-animations">CSS Animations</span></h2>
+      <span class="section-toggle">▼</span>
+    </div>
+    <div class="section-body">
+      <p style="color:var(--text-secondary);margin-bottom:16px;font-size:0.95rem;">CSS animations let you animate any CSS property over time using <code>@keyframes</code> rules. Unlike transitions (triggered by state changes), animations run automatically and can loop.</p>
+
+      <article class="prop-card" id="keyframes">
+        <div class="prop-card-header"><h3>@keyframes & Animation Properties</h3><span class="prop-tag tag-css">Motion</span></div>
+        <div class="demo-area">
+          <div class="demo-header">Live Animation Demo</div>
+          <div class="demo-content">
+            <div class="anim-demo-row">
+              <div class="anim-demo-item">
+                <div class="anim-demo-box anim-spin"></div>
+                <span>spin</span>
+              </div>
+              <div class="anim-demo-item">
+                <div class="anim-demo-box anim-pulse"></div>
+                <span>pulse</span>
+              </div>
+              <div class="anim-demo-item" style="flex:1;">
+                <div class="anim-demo-box anim-slide"></div>
+                <span>slide</span>
+              </div>
+              <div class="anim-demo-item">
+                <div class="anim-demo-box anim-bounce"></div>
+                <span>bounce</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="code-block" style="margin:8px 0">
+          <div class="code-block-header"><span class="code-lang-label">CSS</span><button class="copy-btn">Copy</button></div>
+          <pre><code><span class="tok-com">/* 1. Define keyframes */</span>
+<span class="tok-key">@keyframes</span> <span class="tok-fn">slideIn</span> {
+  <span class="tok-num">from</span> { <span class="tok-prop">transform</span>: <span class="tok-fn">translateX</span>(<span class="tok-num">-100%</span>); <span class="tok-prop">opacity</span>: <span class="tok-num">0</span>; }
+  <span class="tok-num">to</span>   { <span class="tok-prop">transform</span>: <span class="tok-fn">translateX</span>(<span class="tok-num">0</span>);     <span class="tok-prop">opacity</span>: <span class="tok-num">1</span>; }
+}
+
+<span class="tok-key">@keyframes</span> <span class="tok-fn">pulse</span> {
+  <span class="tok-num">0%</span>, <span class="tok-num">100%</span> { <span class="tok-prop">transform</span>: <span class="tok-fn">scale</span>(<span class="tok-num">1</span>); }
+  <span class="tok-num">50%</span>       { <span class="tok-prop">transform</span>: <span class="tok-fn">scale</span>(<span class="tok-num">1.2</span>); }
+}
+
+<span class="tok-com">/* 2. Apply to element */</span>
+<span class="tok-sel">.box</span> {
+  <span class="tok-prop">animation-name</span>:            <span class="tok-val">slideIn</span>;
+  <span class="tok-prop">animation-duration</span>:        <span class="tok-val">0.5s</span>;
+  <span class="tok-prop">animation-timing-function</span>: <span class="tok-val">ease-out</span>;
+  <span class="tok-prop">animation-delay</span>:           <span class="tok-val">0.1s</span>;
+  <span class="tok-prop">animation-iteration-count</span>: <span class="tok-val">1</span>;      <span class="tok-com">/* or infinite */</span>
+  <span class="tok-prop">animation-direction</span>:       <span class="tok-val">normal</span>;  <span class="tok-com">/* alternate, reverse */</span>
+  <span class="tok-prop">animation-fill-mode</span>:       <span class="tok-val">both</span>;    <span class="tok-com">/* forwards, backwards */</span>
+
+  <span class="tok-com">/* Shorthand: name duration timing delay count direction fill */</span>
+  <span class="tok-prop">animation</span>: <span class="tok-val">slideIn 0.5s ease-out 0.1s 1 normal both</span>;
+}
+
+<span class="tok-com">/* Prefer reduced motion for accessibility */</span>
+<span class="tok-sel">@media (prefers-reduced-motion: reduce)</span> {
+  <span class="tok-sel">*</span> { <span class="tok-prop">animation-duration</span>: <span class="tok-val">0.01ms</span> <span class="tok-key">!important</span>; }
+}</code></pre>
+        </div>
+        <div class="try-it-wrap" style="padding:0 0 6px">
+          <div class="try-it-label">Try It</div>
+          <textarea class="try-it" placeholder="@keyframes myAnim {&#10;  from {&#10;    opacity: 0;&#10;    transform: translateY(30px);&#10;  }&#10;  to {&#10;    opacity: 1;&#10;    transform: translateY(0);&#10;  }&#10;}&#10;&#10;.fade-up {&#10;  animation: myAnim 0.6s ease both;&#10;}"></textarea>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- TRANSITIONS -->
+  <section class="doc-section" id="transitions">
+    <div class="section-header">
+      <h2><span class="section-icon">🌊</span> <span data-i18n="lang-transitions">CSS Transitions</span></h2>
+      <span class="section-toggle">▼</span>
+    </div>
+    <div class="section-body">
+      <p style="color:var(--text-secondary);margin-bottom:16px;font-size:0.95rem;">Transitions smoothly animate changes between CSS property values — triggered by state changes like <code>:hover</code>, <code>:focus</code>, or JavaScript class toggling.</p>
+
+      <article class="prop-card">
+        <div class="prop-card-header"><h3>Transition Properties</h3><span class="prop-tag tag-css">Motion</span></div>
+        <div class="demo-area">
+          <div class="demo-header">Hover me!</div>
+          <div class="demo-content" style="display:flex;gap:20px;flex-wrap:wrap;">
+            <div class="trans-demo-box">Hover!</div>
+            <div class="trans-demo-box" style="border-radius:50%;transition:all 0.6s cubic-bezier(0.34,1.56,0.64,1);">Bounce!</div>
+            <div class="trans-demo-box" style="transition:background 0.3s,color 0.3s,box-shadow 0.3s;">Colors</div>
+          </div>
+        </div>
+        <div class="code-block" style="margin:8px 0">
+          <div class="code-block-header"><span class="code-lang-label">CSS</span><button class="copy-btn">Copy</button></div>
+          <pre><code><span class="tok-sel">.button</span> {
+  <span class="tok-prop">background</span>: <span class="tok-val">purple</span>;
+  <span class="tok-prop">transform</span>:  <span class="tok-fn">scale</span>(<span class="tok-num">1</span>);
+
+  <span class="tok-com">/* property | duration | timing-fn | delay */</span>
+  <span class="tok-prop">transition</span>: <span class="tok-val">all 0.3s ease</span>;
+  <span class="tok-prop">transition</span>: <span class="tok-val">background 0.2s, transform 0.3s ease-out</span>;
+}
+
+<span class="tok-sel">.button:hover</span> {
+  <span class="tok-prop">background</span>: <span class="tok-val">gold</span>;
+  <span class="tok-prop">transform</span>:  <span class="tok-fn">scale</span>(<span class="tok-num">1.05</span>);
+}
+
+<span class="tok-com">/* Easing functions */</span>
+<span class="tok-com">/* ease | linear | ease-in | ease-out | ease-in-out */</span>
+<span class="tok-com">/* cubic-bezier(x1, y1, x2, y2) — custom curve */</span>
+<span class="tok-com">/* steps(n) — discrete steps */</span>
+
+<span class="tok-com">/* Bounce effect with cubic-bezier */</span>
+<span class="tok-sel">.bouncy</span> { <span class="tok-prop">transition</span>: <span class="tok-val">transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)</span>; }</code></pre>
+        </div>
+        <div class="try-it-wrap" style="padding:0 0 6px">
+          <div class="try-it-label">Try It</div>
+          <textarea class="try-it" placeholder=".card {&#10;  transition: transform 0.3s ease, box-shadow 0.3s;&#10;}&#10;&#10;.card:hover {&#10;  transform: translateY(-4px);&#10;  box-shadow: 0 12px 40px rgba(0,0,0,0.3);&#10;}"></textarea>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- RESPONSIVE DESIGN -->
+  <section class="doc-section" id="responsive-design">
+    <div class="section-header">
+      <h2><span class="section-icon">📱</span> <span data-i18n="lang-responsive">Responsive Design</span></h2>
+      <span class="section-toggle">▼</span>
+    </div>
+    <div class="section-body">
+      <p style="color:var(--text-secondary);margin-bottom:16px;font-size:0.95rem;">Responsive design ensures your site looks great on all screen sizes. The key tools: CSS media queries, fluid layouts (%, vw), flexible images, and the <code>viewport</code> meta tag.</p>
+
+      <article class="prop-card">
+        <div class="prop-card-header"><h3>Media Queries</h3><span class="prop-tag tag-css">Responsive</span></div>
+        <div class="demo-area">
+          <div class="demo-header">Breakpoint Visualization</div>
+          <div class="demo-content">
+            <div class="mq-diagram">
+              <div class="mq-device">
+                <div class="mq-screen" style="width:30px;height:50px;font-size:0.5rem;">📱</div>
+                <div class="mq-label">Mobile<br>&lt; 640px</div>
+              </div>
+              <div class="mq-device">
+                <div class="mq-screen" style="width:50px;height:36px;">📟</div>
+                <div class="mq-label">Tablet<br>640–1024px</div>
+              </div>
+              <div class="mq-device">
+                <div class="mq-screen" style="width:90px;height:55px;">💻</div>
+                <div class="mq-label">Laptop<br>1024–1440px</div>
+              </div>
+              <div class="mq-device">
+                <div class="mq-screen" style="width:120px;height:70px;">🖥</div>
+                <div class="mq-label">Desktop<br>&gt; 1440px</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="code-block" style="margin:8px 0">
+          <div class="code-block-header"><span class="code-lang-label">CSS</span><button class="copy-btn">Copy</button></div>
+          <pre><code><span class="tok-com">/* Mobile-first approach (recommended) */</span>
+<span class="tok-com">/* Base styles for mobile — no query needed */</span>
+<span class="tok-sel">.grid</span> { <span class="tok-prop">grid-template-columns</span>: <span class="tok-val">1fr</span>; }
+
+<span class="tok-com">/* Tablet and up */</span>
+<span class="tok-sel">@media (min-width: 640px)</span> {
+  <span class="tok-sel">.grid</span> { <span class="tok-prop">grid-template-columns</span>: <span class="tok-val">repeat(2, 1fr)</span>; }
+}
+
+<span class="tok-com">/* Desktop and up */</span>
+<span class="tok-sel">@media (min-width: 1024px)</span> {
+  <span class="tok-sel">.grid</span> { <span class="tok-prop">grid-template-columns</span>: <span class="tok-val">repeat(3, 1fr)</span>; }
+}
+
+<span class="tok-com">/* Other query types */</span>
+<span class="tok-sel">@media (max-width: 768px)</span> { }        <span class="tok-com">/* max-width (desktop-first) */</span>
+<span class="tok-sel">@media (orientation: landscape)</span> { }  <span class="tok-com">/* device orientation */</span>
+<span class="tok-sel">@media (prefers-color-scheme: dark)</span> { } <span class="tok-com">/* system dark mode */</span>
+<span class="tok-sel">@media print</span> { }                     <span class="tok-com">/* print styles */</span>
+
+<span class="tok-com">/* Logical operators */</span>
+<span class="tok-sel">@media (min-width: 640px) and (max-width: 1024px)</span> { }
+<span class="tok-sel">@media (max-width: 600px), (orientation: portrait)</span> { }
+
+<span class="tok-com">/* Modern: Container Queries */</span>
+<span class="tok-sel">.card-container</span> { <span class="tok-prop">container-type</span>: <span class="tok-val">inline-size</span>; }
+<span class="tok-sel">@container (min-width: 400px)</span> {
+  <span class="tok-sel">.card</span> { <span class="tok-prop">display</span>: <span class="tok-val">grid</span>; }
+}</code></pre>
+        </div>
+        <div class="try-it-wrap" style="padding:0 0 6px">
+          <div class="try-it-label">Try It</div>
+          <textarea class="try-it" placeholder="/* Mobile first */&#10;.sidebar { display: none; }&#10;&#10;@media (min-width: 768px) {&#10;  .layout {&#10;    display: grid;&#10;    grid-template-columns: 250px 1fr;&#10;  }&#10;  .sidebar { display: block; }&#10;}"></textarea>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- TRANSFORMS -->
+  <section class="doc-section" id="transforms">
+    <div class="section-header">
+      <h2><span class="section-icon">🔄</span> <span data-i18n="lang-transforms">CSS Transforms</span></h2>
+      <span class="section-toggle">▼</span>
+    </div>
+    <div class="section-body">
+      <p style="color:var(--text-secondary);margin-bottom:16px;font-size:0.95rem;">CSS transforms move, rotate, scale, and skew elements in 2D or 3D space. They don't affect document flow — perfect for smooth animations without layout reflow.</p>
+
+      <article class="prop-card">
+        <div class="prop-card-header"><h3>Transform Functions</h3><span class="prop-tag tag-css">Visual</span></div>
+        <div class="demo-area">
+          <div class="demo-header">Transform Showcase</div>
+          <div class="demo-content">
+            <div class="transform-demo-wrap">
+              <div class="tf-item"><div class="tf-box"></div><div class="tf-label">none</div></div>
+              <div class="tf-item"><div class="tf-box tf-rotate"></div><div class="tf-label">rotate(30deg)</div></div>
+              <div class="tf-item"><div class="tf-box tf-scale"></div><div class="tf-label">scale(1.3)</div></div>
+              <div class="tf-item"><div class="tf-box tf-skew"></div><div class="tf-label">skewX(20deg)</div></div>
+              <div class="tf-item"><div class="tf-box tf-translate"></div><div class="tf-label">translate(10,-5)</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="code-block" style="margin:8px 0">
+          <div class="code-block-header"><span class="code-lang-label">CSS</span><button class="copy-btn">Copy</button></div>
+          <pre><code><span class="tok-sel">.el</span> {
+  <span class="tok-com">/* 2D transforms */</span>
+  <span class="tok-prop">transform</span>: <span class="tok-fn">translate</span>(<span class="tok-num">50px</span>, <span class="tok-num">20px</span>);
+  <span class="tok-prop">transform</span>: <span class="tok-fn">rotate</span>(<span class="tok-num">45deg</span>);
+  <span class="tok-prop">transform</span>: <span class="tok-fn">scale</span>(<span class="tok-num">1.5</span>);
+  <span class="tok-prop">transform</span>: <span class="tok-fn">skewX</span>(<span class="tok-num">20deg</span>);
+  <span class="tok-prop">transform</span>: <span class="tok-fn">skewY</span>(<span class="tok-num">10deg</span>);
+
+  <span class="tok-com">/* Combine multiple transforms */</span>
+  <span class="tok-prop">transform</span>: <span class="tok-fn">rotate</span>(<span class="tok-num">20deg</span>) <span class="tok-fn">scale</span>(<span class="tok-num">1.1</span>) <span class="tok-fn">translateX</span>(<span class="tok-num">10px</span>);
+
+  <span class="tok-com">/* Origin point (default: center center) */</span>
+  <span class="tok-prop">transform-origin</span>: <span class="tok-val">top left</span>;
+  <span class="tok-prop">transform-origin</span>: <span class="tok-val">50% 100%</span>;
+
+  <span class="tok-com">/* 3D transforms */</span>
+  <span class="tok-prop">transform</span>: <span class="tok-fn">rotateX</span>(<span class="tok-num">45deg</span>) <span class="tok-fn">rotateY</span>(<span class="tok-num">30deg</span>);
+  <span class="tok-prop">transform</span>: <span class="tok-fn">perspective</span>(<span class="tok-num">500px</span>) <span class="tok-fn">rotateY</span>(<span class="tok-num">30deg</span>);
+
+  <span class="tok-com">/* 3D context */</span>
+  <span class="tok-prop">perspective</span>:       <span class="tok-val">1000px</span>;
+  <span class="tok-prop">transform-style</span>:   <span class="tok-val">preserve-3d</span>;
+  <span class="tok-prop">backface-visibility</span>: <span class="tok-val">hidden</span>;
+}</code></pre>
+        </div>
+        <div class="try-it-wrap" style="padding:0 0 6px">
+          <div class="try-it-label">Try It</div>
+          <textarea class="try-it" placeholder=".card:hover {&#10;  transform: translateY(-8px) rotate(2deg) scale(1.02);&#10;  transition: transform 0.3s ease;&#10;}&#10;&#10;.icon {&#10;  transform-origin: center;&#10;  transition: transform 0.4s;&#10;}&#10;.icon:hover { transform: rotate(360deg); }"></textarea>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ADVANCED CSS -->
+  <section class="doc-section" id="advanced-css">
+    <div class="section-header">
+      <h2><span class="section-icon">⚗️</span> <span data-i18n="lang-adv-css">Advanced CSS</span></h2>
+      <span class="section-toggle">▼</span>
+    </div>
+    <div class="section-body">
+      <p style="color:var(--text-secondary);margin-bottom:16px;font-size:0.95rem;">Modern CSS has powerful tools for visual effects, object control, and layout that were impossible just a few years ago.</p>
+
+      <article class="prop-card" id="css-filters">
+        <div class="prop-card-header"><h3>CSS Filters & Backdrop</h3><span class="prop-tag tag-css">Effects</span><span class="prop-tag tag-new">Modern</span></div>
+        <div class="prop-description"><p>Filters apply graphical effects directly in CSS — no images needed. <code>backdrop-filter</code> applies them behind an element, enabling the popular "frosted glass" effect.</p></div>
+        <div class="demo-area">
+          <div class="demo-header">Filter Demo</div>
+          <div class="demo-content" style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+            <div style="width:60px;height:60px;background:linear-gradient(135deg,#7B2FBE,#D4AF37);border-radius:8px;font-family:var(--font-code);font-size:0.6rem;color:white;display:flex;align-items:center;justify-content:center;">normal</div>
+            <div style="width:60px;height:60px;background:linear-gradient(135deg,#7B2FBE,#D4AF37);border-radius:8px;filter:blur(2px);font-family:var(--font-code);font-size:0.6rem;color:white;display:flex;align-items:center;justify-content:center;">blur</div>
+            <div style="width:60px;height:60px;background:linear-gradient(135deg,#7B2FBE,#D4AF37);border-radius:8px;filter:grayscale(100%);font-family:var(--font-code);font-size:0.6rem;color:white;display:flex;align-items:center;justify-content:center;">grayscale</div>
+            <div style="width:60px;height:60px;background:linear-gradient(135deg,#7B2FBE,#D4AF37);border-radius:8px;filter:brightness(1.8);font-family:var(--font-code);font-size:0.6rem;color:white;display:flex;align-items:center;justify-content:center;">bright</div>
+            <div style="width:60px;height:60px;background:linear-gradient(135deg,#7B2FBE,#D4AF37);border-radius:8px;filter:hue-rotate(120deg);font-family:var(--font-code);font-size:0.6rem;color:white;display:flex;align-items:center;justify-content:center;">hue</div>
+            <div style="width:60px;height:60px;background:linear-gradient(135deg,#7B2FBE,#D4AF37);border-radius:8px;filter:sepia(100%);font-family:var(--font-code);font-size:0.6rem;color:white;display:flex;align-items:center;justify-content:center;">sepia</div>
+            <div style="width:60px;height:60px;background:linear-gradient(135deg,#7B2FBE,#D4AF37);border-radius:8px;filter:drop-shadow(4px 4px 8px rgba(0,0,0,0.8));font-family:var(--font-code);font-size:0.6rem;color:white;display:flex;align-items:center;justify-content:center;">shadow</div>
+          </div>
+        </div>
+        <div class="code-block" style="margin:8px 0">
+          <div class="code-block-header"><span class="code-lang-label">CSS</span><button class="copy-btn">Copy</button></div>
+          <pre><code><span class="tok-sel">.el</span> {
+  <span class="tok-prop">filter</span>: <span class="tok-fn">blur</span>(<span class="tok-num">4px</span>);
+  <span class="tok-prop">filter</span>: <span class="tok-fn">brightness</span>(<span class="tok-num">1.2</span>);
+  <span class="tok-prop">filter</span>: <span class="tok-fn">contrast</span>(<span class="tok-num">150%</span>);
+  <span class="tok-prop">filter</span>: <span class="tok-fn">grayscale</span>(<span class="tok-num">100%</span>);
+  <span class="tok-prop">filter</span>: <span class="tok-fn">hue-rotate</span>(<span class="tok-num">90deg</span>);
+  <span class="tok-prop">filter</span>: <span class="tok-fn">invert</span>(<span class="tok-num">100%</span>);
+  <span class="tok-prop">filter</span>: <span class="tok-fn">sepia</span>(<span class="tok-num">80%</span>);
+  <span class="tok-prop">filter</span>: <span class="tok-fn">saturate</span>(<span class="tok-num">200%</span>);
+  <span class="tok-prop">filter</span>: <span class="tok-fn">drop-shadow</span>(<span class="tok-num">4px 4px 8px rgba(0,0,0,0.5)</span>);
+  <span class="tok-prop">filter</span>: <span class="tok-fn">blur</span>(<span class="tok-num">2px</span>) <span class="tok-fn">brightness</span>(<span class="tok-num">0.8</span>); <span class="tok-com">/* combine */</span>
+}
+
+<span class="tok-com">/* Frosted glass (backdrop-filter) */</span>
+<span class="tok-sel">.glass-card</span> {
+  <span class="tok-prop">backdrop-filter</span>: <span class="tok-fn">blur</span>(<span class="tok-num">16px</span>) <span class="tok-fn">saturate</span>(<span class="tok-num">180%</span>);
+  <span class="tok-prop">background</span>: <span class="tok-fn">rgba</span>(<span class="tok-num">255, 255, 255, 0.1</span>);
+  <span class="tok-prop">border</span>: <span class="tok-num">1px</span> <span class="tok-val">solid</span> <span class="tok-fn">rgba</span>(<span class="tok-num">255, 255, 255, 0.2</span>);
+}</code></pre>
+        </div>
+        <div class="try-it-wrap" style="padding:0 0 6px">
+          <div class="try-it-label">Try It</div>
+          <textarea class="try-it" placeholder=".frosted {&#10;  backdrop-filter: blur(12px) saturate(180%);&#10;  background: rgba(255,255,255,0.08);&#10;  border: 1px solid rgba(255,255,255,0.15);&#10;  border-radius: 16px;&#10;  padding: 24px;&#10;}"></textarea>
+        </div>
+      </article>
+
+      <article class="prop-card" id="css-functions">
+        <div class="prop-card-header"><h3>CSS Math Functions</h3><span class="prop-tag tag-css">Functions</span></div>
+        <div class="code-block" style="margin:0 0 8px">
+          <div class="code-block-header"><span class="code-lang-label">CSS</span><button class="copy-btn">Copy</button></div>
+          <pre><code><span class="tok-com">/* calc() — mix units */</span>
+<span class="tok-sel">.sidebar</span> { <span class="tok-prop">width</span>: <span class="tok-fn">calc</span>(<span class="tok-num">100% - 240px</span>); }
+
+<span class="tok-com">/* min() — use the smaller value */</span>
+<span class="tok-sel">.container</span> { <span class="tok-prop">width</span>: <span class="tok-fn">min</span>(<span class="tok-num">90%, 1200px</span>); }
+
+<span class="tok-com">/* max() — use the larger value */</span>
+<span class="tok-sel">.text</span> { <span class="tok-prop">font-size</span>: <span class="tok-fn">max</span>(<span class="tok-num">14px, 1.2vw</span>); }
+
+<span class="tok-com">/* clamp(min, preferred, max) — fluid scaling */</span>
+<span class="tok-sel">h1</span> { <span class="tok-prop">font-size</span>: <span class="tok-fn">clamp</span>(<span class="tok-num">1.5rem, 4vw, 3rem</span>); }
+<span class="tok-sel">.card</span> { <span class="tok-prop">padding</span>: <span class="tok-fn">clamp</span>(<span class="tok-num">12px, 2vw, 32px</span>); }
+
+<span class="tok-com">/* gradient functions */</span>
+<span class="tok-sel">.el</span> { <span class="tok-prop">background</span>: <span class="tok-fn">linear-gradient</span>(<span class="tok-num">135deg</span>, <span class="tok-val">purple</span>, <span class="tok-val">gold</span>); }
+<span class="tok-sel">.el</span> { <span class="tok-prop">background</span>: <span class="tok-fn">radial-gradient</span>(<span class="tok-val">circle</span>, <span class="tok-val">purple</span>, <span class="tok-val">transparent</span>); }
+<span class="tok-sel">.el</span> { <span class="tok-prop">background</span>: <span class="tok-fn">conic-gradient</span>(<span class="tok-val">red</span>, <span class="tok-val">blue</span>, <span class="tok-val">red</span>); }</code></pre>
+        </div>
+        <div class="try-it-wrap" style="padding:0 0 6px">
+          <div class="try-it-label">Try It</div>
+          <textarea class="try-it" placeholder="/* Fluid font size */&#10;h1 {&#10;  font-size: clamp(1.5rem, 5vw, 4rem);&#10;}&#10;&#10;/* Full-width minus sidebar */&#10;.main {&#10;  width: calc(100% - 280px);&#10;  min-height: min(100vh, 800px);&#10;}"></textarea>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- BEST PRACTICES -->
+  <section class="doc-section" id="best-practices">
+    <div class="section-header">
+      <h2><span class="section-icon">🏆</span> <span data-i18n="lang-best">Best Practices</span></h2>
+      <span class="section-toggle">▼</span>
+    </div>
+    <div class="section-body">
+      <p style="color:var(--text-secondary);margin-bottom:16px;font-size:0.95rem;">Great CSS isn't just working CSS — it's organized, performant, and maintainable CSS that your future self will thank you for.</p>
+
+      <article class="prop-card">
+        <div class="prop-card-header"><h3>BEM Naming Convention</h3><span class="prop-tag tag-css">Architecture</span></div>
+        <div class="prop-description"><p>BEM (Block, Element, Modifier) gives a systematic naming convention. It prevents style conflicts and makes CSS self-documenting.</p></div>
+        <div class="code-block" style="margin:0 0 8px">
+          <div class="code-block-header"><span class="code-lang-label">CSS + HTML</span><button class="copy-btn">Copy</button></div>
+          <pre><code><span class="tok-com">/* Block = standalone component */</span>
+<span class="tok-sel">.card</span> { }
+
+<span class="tok-com">/* Element = part of Block (double underscore) */</span>
+<span class="tok-sel">.card__title</span>  { }
+<span class="tok-sel">.card__image</span>  { }
+<span class="tok-sel">.card__footer</span> { }
+
+<span class="tok-com">/* Modifier = variation of Block or Element (double dash) */</span>
+<span class="tok-sel">.card--featured</span>       { }
+<span class="tok-sel">.card--dark</span>           { }
+<span class="tok-sel">.card__title--large</span>   { }
+
+<span class="tok-com">&lt;!-- In HTML --&gt;</span>
+<span class="tok-tag">&lt;div</span> <span class="tok-attr">class</span>=<span class="tok-str">"card card--featured"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;img</span> <span class="tok-attr">class</span>=<span class="tok-str">"card__image"</span> <span class="tok-attr">src</span>=<span class="tok-str">"..."</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;h2</span> <span class="tok-attr">class</span>=<span class="tok-str">"card__title card__title--large"</span><span class="tok-tag">&gt;</span>Title<span class="tok-tag">&lt;/h2&gt;</span>
+<span class="tok-tag">&lt;/div&gt;</span></code></pre>
+        </div>
+      </article>
+
+      <article class="prop-card">
+        <div class="prop-card-header"><h3>Performance Tips</h3><span class="prop-tag tag-css">Performance</span></div>
+        <div class="prop-description">
+          <p>Good CSS performance means faster rendering, smoother animations, and better user experience.</p>
+        </div>
+        <table class="quick-ref-table" style="margin:0 0 8px">
+          <tr><th>Do</th><th>Instead of</th><th>Why</th></tr>
+          <tr><td>transform / opacity</td><td>top/left/width for animation</td><td>GPU-accelerated, no reflow</td></tr>
+          <tr><td>will-change: transform</td><td>—</td><td>Hints browser to pre-optimize</td></tr>
+          <tr><td>CSS variables</td><td>Magic numbers</td><td>Maintainable, themeable</td></tr>
+          <tr><td>:is() / :where()</td><td>Long selector chains</td><td>Shorter, readable selectors</td></tr>
+          <tr><td>font-display: swap</td><td>—</td><td>Prevents invisible text flash</td></tr>
+          <tr><td>contain: layout</td><td>—</td><td>Limits reflow scope</td></tr>
+          <tr><td>prefers-reduced-motion</td><td>—</td><td>Accessibility</td></tr>
+        </table>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ══ FINAL DIVIDER ══ -->
+  <div class="ornament-divider" style="font-size:1.5rem;padding:30px 0;">⚜ ✦ ⚜ ✦ ⚜</div>
+
+<!-- ============================================================
+     SECTIONS_EXTRA.html
+     Paste this block inside <main> in index.html, 
+     AFTER the existing best-practices section,
+     BEFORE the closing </main> tag.
+     Also paste the <footer> block after </main>.
+     ============================================================ -->
+
+<!-- ══════════════════════════════════════════════════════════
+     TYPOGRAPHY (filled out)
+     ══════════════════════════════════════════════════════════ -->
+<section class="doc-section" id="typography">
+  <div class="section-header">
+    <h2><span class="section-icon">🔤</span> <span data-i18n="lang-typography">CSS Typography</span></h2>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <p style="color:var(--text-secondary);margin-bottom:16px;font-size:0.95rem;">Typography is the art of arranging type to make text legible, readable, and beautiful. CSS gives you deep control over every aspect of how text appears.</p>
+
+    <article class="prop-card">
+      <div class="prop-card-header"><h3>Font Properties</h3><span class="prop-tag tag-css">Type</span></div>
+      <div class="type-showcase">
+        <div class="type-item"><span class="type-label">font-family</span><span style="font-family:serif;font-size:1rem;">Serif — Georgia, Times</span></div>
+        <div class="type-item"><span class="type-label">font-size</span><span style="font-size:1.4rem;">1.4rem text</span></div>
+        <div class="type-item"><span class="type-label">font-weight</span><span style="font-weight:300;">300 Light</span> <span style="font-weight:700;margin-left:16px;">700 Bold</span></div>
+        <div class="type-item"><span class="type-label">font-style</span><span style="font-style:italic;">Italic text here</span></div>
+        <div class="type-item"><span class="type-label">line-height</span><span style="line-height:2.2;font-size:0.85rem;">Loose line-height 2.2 gives breathing room between lines of text.</span></div>
+        <div class="type-item"><span class="type-label">letter-spacing</span><span style="letter-spacing:0.2em;font-size:0.9rem;">SPACED OUT</span></div>
+      </div>
+      <div class="code-block" style="margin:8px 0">
+        <div class="code-block-header"><span class="code-lang-label">CSS</span><button class="copy-btn">Copy</button></div>
+        <pre><code><span class="tok-sel">body</span> {
+  <span class="tok-prop">font-family</span>:  <span class="tok-val">'Georgia', serif</span>;       <span class="tok-com">/* or system stack */</span>
+  <span class="tok-prop">font-size</span>:    <span class="tok-val">1rem</span>;               <span class="tok-com">/* 16px base */</span>
+  <span class="tok-prop">font-weight</span>:  <span class="tok-val">400</span>;               <span class="tok-com">/* 100–900 */</span>
+  <span class="tok-prop">font-style</span>:   <span class="tok-val">normal</span>;            <span class="tok-com">/* italic | oblique */</span>
+  <span class="tok-prop">line-height</span>:  <span class="tok-val">1.75</span>;              <span class="tok-com">/* unitless preferred */</span>
+  <span class="tok-prop">letter-spacing</span>: <span class="tok-val">0.02em</span>;
+  <span class="tok-prop">word-spacing</span>:   <span class="tok-val">0.05em</span>;
+  <span class="tok-prop">font-variant</span>:   <span class="tok-val">small-caps</span>;
+}
+
+<span class="tok-com">/* Web fonts */</span>
+<span class="tok-key">@font-face</span> {
+  <span class="tok-prop">font-family</span>: <span class="tok-str">'MyFont'</span>;
+  <span class="tok-prop">src</span>: <span class="tok-fn">url</span>(<span class="tok-str">'font.woff2'</span>) <span class="tok-val">format</span>(<span class="tok-str">'woff2'</span>);
+  <span class="tok-prop">font-weight</span>:  <span class="tok-val">100 900</span>;           <span class="tok-com">/* variable font range */</span>
+  <span class="tok-prop">font-display</span>: <span class="tok-val">swap</span>;              <span class="tok-com">/* prevents FOIT */</span>
+}
+
+<span class="tok-com">/* Text properties */</span>
+<span class="tok-sel">h1</span> {
+  <span class="tok-prop">text-align</span>:      <span class="tok-val">center</span>;          <span class="tok-com">/* left|right|justify */</span>
+  <span class="tok-prop">text-transform</span>:  <span class="tok-val">uppercase</span>;       <span class="tok-com">/* lowercase|capitalize */</span>
+  <span class="tok-prop">text-decoration</span>: <span class="tok-val">underline gold</span>;  <span class="tok-com">/* line color */</span>
+  <span class="tok-prop">text-shadow</span>:     <span class="tok-val">2px 2px 8px rgba(0,0,0,0.5)</span>;
+}
+
+<span class="tok-com">/* Overflow */</span>
+<span class="tok-sel">.truncate</span> {
+  <span class="tok-prop">white-space</span>:   <span class="tok-val">nowrap</span>;
+  <span class="tok-prop">overflow</span>:      <span class="tok-val">hidden</span>;
+  <span class="tok-prop">text-overflow</span>: <span class="tok-val">ellipsis</span>;
+}
+
+<span class="tok-com">/* Multi-line clamp */</span>
+<span class="tok-sel">.clamp-3</span> {
+  <span class="tok-prop">display</span>:            <span class="tok-val">-webkit-box</span>;
+  <span class="tok-prop">-webkit-line-clamp</span>: <span class="tok-val">3</span>;
+  <span class="tok-prop">-webkit-box-orient</span>: <span class="tok-val">vertical</span>;
+  <span class="tok-prop">overflow</span>:           <span class="tok-val">hidden</span>;
+}</code></pre>
+      </div>
+      <div class="try-it-wrap" style="padding:0 0 6px">
+        <div class="try-it-label">Try It</div>
+        <textarea class="try-it" placeholder="p {&#10;  font-family: 'EB Garamond', serif;&#10;  font-size: clamp(1rem, 2vw, 1.2rem);&#10;  line-height: 1.8;&#10;  letter-spacing: 0.02em;&#10;}&#10;&#10;h1 { text-shadow: 0 0 20px gold; }"></textarea>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ══ BACKGROUNDS ══ -->
+<section class="doc-section" id="backgrounds">
+  <div class="section-header">
+    <h2><span class="section-icon">🖼️</span> <span data-i18n="lang-backgrounds">Backgrounds</span></h2>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <p style="color:var(--text-secondary);margin-bottom:16px;font-size:0.95rem;">CSS backgrounds go far beyond a plain color — layers, gradients, patterns, and blend modes let you create rich visual textures entirely in code.</p>
+
+    <article class="prop-card">
+      <div class="prop-card-header"><h3>Background Properties</h3><span class="prop-tag tag-css">Visual</span></div>
+      <div class="demo-area">
+        <div class="demo-header">Background Examples</div>
+        <div class="demo-content" style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;">
+          <div style="height:60px;border-radius:8px;background:linear-gradient(135deg,#7B2FBE,#D4AF37);display:flex;align-items:center;justify-content:center;font-family:var(--font-code);font-size:0.65rem;color:#fff;">linear-gradient</div>
+          <div style="height:60px;border-radius:8px;background:radial-gradient(circle at 30% 40%,#7B2FBE,#0E0818);display:flex;align-items:center;justify-content:center;font-family:var(--font-code);font-size:0.65rem;color:#fff;">radial-gradient</div>
+          <div style="height:60px;border-radius:8px;background:conic-gradient(#7B2FBE,#D4AF37,#7B2FBE);display:flex;align-items:center;justify-content:center;font-family:var(--font-code);font-size:0.65rem;color:#fff;">conic-gradient</div>
+          <div style="height:60px;border-radius:8px;background:repeating-linear-gradient(45deg,rgba(212,175,55,0.15) 0px,rgba(212,175,55,0.15) 2px,transparent 2px,transparent 14px);background-color:var(--bg-code);display:flex;align-items:center;justify-content:center;font-family:var(--font-code);font-size:0.65rem;color:var(--lavender);">pattern</div>
+          <div style="height:60px;border-radius:8px;background:linear-gradient(to right,#7B2FBE,#D4AF37),url('https://images.pexels.com/photos/1408221/pexels-photo-1408221.jpeg');background-blend-mode:multiply;background-size:cover;display:flex;align-items:center;justify-content:center;font-family:var(--font-code);font-size:0.65rem;color:#fff;">blend-mode</div>
+          <div style="height:60px;border-radius:8px;background:linear-gradient(rgba(123,47,190,0.6),rgba(212,175,55,0.3)),url('https://images.pexels.com/photos/1408221/pexels-photo-1408221.jpeg') center/cover;display:flex;align-items:center;justify-content:center;font-family:var(--font-code);font-size:0.65rem;color:#fff;">overlay+image</div>
+        </div>
+      </div>
+      <div class="code-block" style="margin:8px 0">
+        <div class="code-block-header"><span class="code-lang-label">CSS</span><button class="copy-btn">Copy</button></div>
+        <pre><code><span class="tok-sel">.el</span> {
+  <span class="tok-com">/* Color */</span>
+  <span class="tok-prop">background-color</span>:      <span class="tok-val">#1A0A2E</span>;
+
+  <span class="tok-com">/* Image */</span>
+  <span class="tok-prop">background-image</span>:      <span class="tok-fn">url</span>(<span class="tok-str">'photo.jpg'</span>);
+  <span class="tok-prop">background-size</span>:       <span class="tok-val">cover</span>;       <span class="tok-com">/* contain | 100% | px */</span>
+  <span class="tok-prop">background-position</span>:   <span class="tok-val">center</span>;
+  <span class="tok-prop">background-repeat</span>:     <span class="tok-val">no-repeat</span>;
+  <span class="tok-prop">background-attachment</span>: <span class="tok-val">fixed</span>;       <span class="tok-com">/* parallax effect */</span>
+  <span class="tok-prop">background-clip</span>:       <span class="tok-val">text</span>;        <span class="tok-com">/* clip to text shape */</span>
+  <span class="tok-prop">background-origin</span>:     <span class="tok-val">border-box</span>;
+
+  <span class="tok-com">/* Gradients */</span>
+  <span class="tok-prop">background</span>: <span class="tok-fn">linear-gradient</span>(<span class="tok-num">135deg</span>, <span class="tok-val">purple 0%</span>, <span class="tok-val">gold 100%</span>);
+  <span class="tok-prop">background</span>: <span class="tok-fn">radial-gradient</span>(<span class="tok-val">circle at 30% 50%</span>, <span class="tok-val">purple</span>, <span class="tok-val">transparent</span>);
+  <span class="tok-prop">background</span>: <span class="tok-fn">conic-gradient</span>(<span class="tok-val">from 45deg</span>, <span class="tok-val">purple</span>, <span class="tok-val">gold</span>, <span class="tok-val">purple</span>);
+
+  <span class="tok-com">/* Multiple layers (comma-separated, first = on top) */</span>
+  <span class="tok-prop">background</span>:
+    <span class="tok-fn">linear-gradient</span>(<span class="tok-fn">rgba</span>(<span class="tok-num">0,0,0,0.4</span>), <span class="tok-fn">rgba</span>(<span class="tok-num">0,0,0,0.4</span>)),
+    <span class="tok-fn">url</span>(<span class="tok-str">'hero.jpg'</span>) <span class="tok-val">center/cover no-repeat</span>;
+
+  <span class="tok-com">/* Blend mode */</span>
+  <span class="tok-prop">background-blend-mode</span>: <span class="tok-val">multiply</span>; <span class="tok-com">/* screen|overlay|… */</span>
+  <span class="tok-prop">mix-blend-mode</span>:        <span class="tok-val">screen</span>;
+
+  <span class="tok-com">/* Gradient text */</span>
+  <span class="tok-prop">background</span>: <span class="tok-fn">linear-gradient</span>(<span class="tok-val">gold</span>, <span class="tok-val">purple</span>);
+  <span class="tok-prop">-webkit-background-clip</span>: <span class="tok-val">text</span>;
+  <span class="tok-prop">-webkit-text-fill-color</span>: <span class="tok-val">transparent</span>;
+}</code></pre>
+      </div>
+      <div class="try-it-wrap" style="padding:0 0 6px">
+        <div class="try-it-label">Try It</div>
+        <textarea class="try-it" placeholder=".hero {&#10;  background:&#10;    linear-gradient(135deg, rgba(123,47,190,0.8), rgba(212,175,55,0.4)),&#10;    url('https://picsum.photos/800/400') center/cover;&#10;  color: white;&#10;  padding: 60px;&#10;}"></textarea>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ══ BORDERS & SHADOWS (filled) ══ -->
+<section class="doc-section" id="borders-shadows">
+  <div class="section-header">
+    <h2><span class="section-icon">🔳</span> <span data-i18n="lang-borders">Borders &amp; Shadows</span></h2>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <article class="prop-card">
+      <div class="prop-card-header"><h3>Borders, Outlines & Box Shadow</h3><span class="prop-tag tag-css">Visual</span></div>
+      <div class="demo-area">
+        <div class="demo-header">Shadow & Border Showcase</div>
+        <div class="demo-content" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+          <div style="height:56px;border-radius:10px;box-shadow:0 4px 20px rgba(123,47,190,0.6);background:var(--plum-mid);display:flex;align-items:center;justify-content:center;font-family:var(--font-code);font-size:0.65rem;color:var(--lavender);">colored shadow</div>
+          <div style="height:56px;border-radius:10px;box-shadow:inset 0 2px 8px rgba(0,0,0,0.4),0 0 0 1px rgba(212,175,55,0.4);background:var(--bg-code);display:flex;align-items:center;justify-content:center;font-family:var(--font-code);font-size:0.65rem;color:var(--lavender);">inset + ring</div>
+          <div style="height:56px;border-radius:10px;box-shadow:0 0 0 2px gold,0 0 0 4px rgba(212,175,55,0.2),0 0 20px rgba(212,175,55,0.3);background:var(--bg-code);display:flex;align-items:center;justify-content:center;font-family:var(--font-code);font-size:0.65rem;color:var(--gold-pale);">gold glow ring</div>
+          <div style="height:56px;border:2px solid transparent;border-radius:10px;background:linear-gradient(var(--bg-card),var(--bg-card)) padding-box,linear-gradient(135deg,gold,purple) border-box;display:flex;align-items:center;justify-content:center;font-family:var(--font-code);font-size:0.65rem;color:var(--lavender);">gradient border</div>
+          <div style="height:56px;border-radius:50px;box-shadow:6px 6px 14px rgba(0,0,0,0.6),-2px -2px 10px rgba(123,47,190,0.2);background:var(--plum-mid);display:flex;align-items:center;justify-content:center;font-family:var(--font-code);font-size:0.65rem;color:var(--lavender);">neumorphic</div>
+          <div style="height:56px;border:2px dashed rgba(212,175,55,0.5);border-radius:10px;background:rgba(212,175,55,0.04);display:flex;align-items:center;justify-content:center;font-family:var(--font-code);font-size:0.65rem;color:var(--gold-pale);">dashed border</div>
+        </div>
+      </div>
+      <div class="code-block" style="margin:8px 0">
+        <div class="code-block-header"><span class="code-lang-label">CSS</span><button class="copy-btn">Copy</button></div>
+        <pre><code><span class="tok-sel">.el</span> {
+  <span class="tok-com">/* Border shorthand: width style color */</span>
+  <span class="tok-prop">border</span>:        <span class="tok-val">2px solid gold</span>;
+  <span class="tok-prop">border-top</span>:    <span class="tok-val">3px dashed purple</span>;
+  <span class="tok-prop">border-right</span>:  <span class="tok-val">none</span>;
+  <span class="tok-prop">border-radius</span>: <span class="tok-val">8px</span>;
+  <span class="tok-prop">border-radius</span>: <span class="tok-val">50%</span>;              <span class="tok-com">/* circle */</span>
+  <span class="tok-prop">border-radius</span>: <span class="tok-val">12px 0 12px 0</span>;   <span class="tok-com">/* diamond */</span>
+
+  <span class="tok-com">/* Outline (doesn't affect layout) */</span>
+  <span class="tok-prop">outline</span>:        <span class="tok-val">2px solid gold</span>;
+  <span class="tok-prop">outline-offset</span>: <span class="tok-val">4px</span>;
+
+  <span class="tok-com">/* Box shadow: x y blur spread color */</span>
+  <span class="tok-prop">box-shadow</span>: <span class="tok-val">0 4px 20px rgba(0,0,0,0.4)</span>;
+  <span class="tok-prop">box-shadow</span>: <span class="tok-val">inset 0 2px 6px rgba(0,0,0,0.3)</span>;
+
+  <span class="tok-com">/* Multiple shadows */</span>
+  <span class="tok-prop">box-shadow</span>:
+    <span class="tok-val">0 0 0 2px gold</span>,
+    <span class="tok-val">0 0 20px rgba(212,175,55,0.4)</span>,
+    <span class="tok-val">0 8px 30px rgba(0,0,0,0.5)</span>;
+
+  <span class="tok-com">/* Gradient border trick */</span>
+  <span class="tok-prop">border</span>: <span class="tok-val">2px solid transparent</span>;
+  <span class="tok-prop">background</span>:
+    <span class="tok-fn">linear-gradient</span>(<span class="tok-val">var(--bg)</span>, <span class="tok-val">var(--bg)</span>) <span class="tok-val">padding-box</span>,
+    <span class="tok-fn">linear-gradient</span>(<span class="tok-num">135deg</span>, <span class="tok-val">gold</span>, <span class="tok-val">purple</span>) <span class="tok-val">border-box</span>;
+
+  <span class="tok-com">/* Text shadow */</span>
+  <span class="tok-prop">text-shadow</span>: <span class="tok-val">0 0 20px gold, 2px 2px 4px rgba(0,0,0,0.8)</span>;
+}</code></pre>
+      </div>
+      <div class="try-it-wrap" style="padding:0 0 6px">
+        <div class="try-it-label">Try It</div>
+        <textarea class="try-it" placeholder=".glow-card {&#10;  border: 1px solid rgba(212,175,55,0.4);&#10;  box-shadow:&#10;    0 0 0 1px rgba(212,175,55,0.1),&#10;    0 0 30px rgba(212,175,55,0.15),&#10;    0 8px 40px rgba(0,0,0,0.5);&#10;  border-radius: 16px;&#10;}"></textarea>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ══ POSITIONING (filled) ══ -->
+<section class="doc-section" id="positioning">
+  <div class="section-header">
+    <h2><span class="section-icon">📍</span> <span data-i18n="lang-position">CSS Positioning</span></h2>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <article class="prop-card">
+      <div class="prop-card-header"><h3>Position Types</h3><span class="prop-tag tag-css">Layout</span></div>
+      <table class="quick-ref-table" style="margin:0 0 10px">
+        <tr><th>Value</th><th>Behavior</th><th>Use case</th></tr>
+        <tr><td>static</td><td>Normal document flow (default)</td><td>Most elements</td></tr>
+        <tr><td>relative</td><td>Offset from own normal position; establishes stacking context</td><td>Nudging, containing absolute children</td></tr>
+        <tr><td>absolute</td><td>Removed from flow; positioned relative to nearest non-static ancestor</td><td>Tooltips, badges, overlays</td></tr>
+        <tr><td>fixed</td><td>Removed from flow; positioned relative to viewport</td><td>Sticky nav, modals, back-to-top</td></tr>
+        <tr><td>sticky</td><td>Relative until scroll threshold, then fixed</td><td>Sticky table headers, section nav</td></tr>
+      </table>
+      <div class="code-block" style="margin:0 0 8px">
+        <div class="code-block-header"><span class="code-lang-label">CSS</span><button class="copy-btn">Copy</button></div>
+        <pre><code><span class="tok-com">/* Absolute inside relative parent */</span>
+<span class="tok-sel">.card</span>   { <span class="tok-prop">position</span>: <span class="tok-val">relative</span>; }
+<span class="tok-sel">.badge</span>  {
+  <span class="tok-prop">position</span>: <span class="tok-val">absolute</span>;
+  <span class="tok-prop">top</span>:      <span class="tok-val">-8px</span>;
+  <span class="tok-prop">right</span>:    <span class="tok-val">-8px</span>;
+}
+
+<span class="tok-com">/* Fixed navbar */</span>
+<span class="tok-sel">.nav</span> {
+  <span class="tok-prop">position</span>: <span class="tok-val">fixed</span>;
+  <span class="tok-prop">top</span>: <span class="tok-val">0</span>; <span class="tok-prop">left</span>: <span class="tok-val">0</span>; <span class="tok-prop">right</span>: <span class="tok-val">0</span>;
+  <span class="tok-prop">z-index</span>: <span class="tok-val">100</span>;
+}
+
+<span class="tok-com">/* Sticky table header */</span>
+<span class="tok-sel">thead th</span> {
+  <span class="tok-prop">position</span>: <span class="tok-val">sticky</span>;
+  <span class="tok-prop">top</span>: <span class="tok-val">0</span>;
+  <span class="tok-prop">z-index</span>: <span class="tok-val">1</span>;
+}
+
+<span class="tok-com">/* Center absolutely within parent */</span>
+<span class="tok-sel">.center-abs</span> {
+  <span class="tok-prop">position</span>: <span class="tok-val">absolute</span>;
+  <span class="tok-prop">top</span>: <span class="tok-val">50%</span>;
+  <span class="tok-prop">left</span>: <span class="tok-val">50%</span>;
+  <span class="tok-prop">transform</span>: <span class="tok-fn">translate</span>(<span class="tok-val">-50%, -50%</span>);
+}
+
+<span class="tok-com">/* Z-index stacking context */</span>
+<span class="tok-sel">.modal-backdrop</span> { <span class="tok-prop">z-index</span>: <span class="tok-val">400</span>; }
+<span class="tok-sel">.modal</span>          { <span class="tok-prop">z-index</span>: <span class="tok-val">401</span>; }
+<span class="tok-sel">.tooltip</span>        { <span class="tok-prop">z-index</span>: <span class="tok-val">500</span>; }</code></pre>
+      </div>
+      <div class="try-it-wrap" style="padding:0 0 6px">
+        <div class="try-it-label">Try It</div>
+        <textarea class="try-it" placeholder=".parent { position: relative; height: 120px; background: var(--bg-code); }&#10;.child {&#10;  position: absolute;&#10;  bottom: 10px;&#10;  right: 10px;&#10;  background: gold;&#10;  color: black;&#10;  padding: 4px 10px;&#10;  border-radius: 4px;&#10;}"></textarea>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ══ CSS VALUES & UNITS (filled) ══ -->
+<section class="doc-section" id="css-values">
+  <div class="section-header">
+    <h2><span class="section-icon">📐</span> <span data-i18n="lang-values">Values &amp; Units</span></h2>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <article class="prop-card">
+      <div class="prop-card-header"><h3>Units Converter</h3><span class="prop-tag tag-css">Reference</span></div>
+      <div class="prop-description"><p>Change any field to see the others update. Base font-size assumed <strong>16px</strong>.</p></div>
+      <div class="units-converter">
+        <div class="unit-cell"><label>px</label><input type="number" id="unit-px" value="16" step="1"></div>
+        <div class="unit-cell"><label>rem</label><input type="number" id="unit-rem" value="1" step="0.1"></div>
+        <div class="unit-cell"><label>em</label><input type="number" id="unit-em" value="1" step="0.1"></div>
+        <div class="unit-cell"><label>pt</label><input type="number" id="unit-pt" value="12" step="0.5"></div>
+        <div class="unit-cell"><label>vw (1280px wide)</label><input type="number" id="unit-vw" value="1.25" step="0.1"></div>
+        <p class="converter-note">* rem and em assume 16px base. vw assumes 1280px viewport. em ≈ rem for root-level elements.</p>
+      </div>
+      <table class="quick-ref-table" style="margin:12px 0">
+        <tr><th>Unit</th><th>Type</th><th>Relative to</th><th>Best for</th></tr>
+        <tr><td>px</td><td>Absolute</td><td>Device pixel (approx)</td><td>Borders, shadows, precise sizing</td></tr>
+        <tr><td>rem</td><td>Relative</td><td>Root font-size (html)</td><td>Font sizes, spacing (responsive)</td></tr>
+        <tr><td>em</td><td>Relative</td><td>Current element font-size</td><td>Padding/margin proportional to text</td></tr>
+        <tr><td>%</td><td>Relative</td><td>Parent dimension</td><td>Fluid widths, heights</td></tr>
+        <tr><td>vw</td><td>Viewport</td><td>1% of viewport width</td><td>Full-width sections, fluid type</td></tr>
+        <tr><td>vh</td><td>Viewport</td><td>1% of viewport height</td><td>Hero sections, full-screen</td></tr>
+        <tr><td>dvh</td><td>Viewport</td><td>Dynamic viewport height</td><td>Mobile (accounts for browser chrome)</td></tr>
+        <tr><td>fr</td><td>Grid</td><td>Fraction of free space</td><td>Grid column/row sizing</td></tr>
+        <tr><td>ch</td><td>Font</td><td>Width of "0" character</td><td>Readable line lengths</td></tr>
+        <tr><td>clamp()</td><td>Function</td><td>min / preferred / max</td><td>Fluid typography, spacing</td></tr>
+      </table>
+    </article>
+  </div>
+</section>
+
+<!-- ══ SCROLL SNAP ══ -->
+<section class="doc-section" id="scroll-snap">
+  <div class="section-header">
+    <h2><span class="section-icon">🎞️</span> CSS Scroll Snap <span class="section-badge tag-new">Modern</span></h2>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <p style="color:var(--text-secondary);margin-bottom:16px;font-size:0.95rem;">Scroll Snap creates controlled, snappy scroll experiences — carousels, full-page sections, and image galleries with zero JavaScript.</p>
+    <article class="prop-card">
+      <div class="prop-card-header"><h3>Scroll Snap Demo</h3><span class="prop-tag tag-css">UX</span></div>
+      <div class="prop-description"><p>Scroll horizontally — each card snaps into place.</p></div>
+      <div class="scroll-snap-demo">
+        <div class="snap-slide" style="background:linear-gradient(135deg,#7B2FBE,#2D1B55);">Slide 1</div>
+        <div class="snap-slide" style="background:linear-gradient(135deg,#B8860B,#7B5B00);">Slide 2</div>
+        <div class="snap-slide" style="background:linear-gradient(135deg,#2D1B55,#7B2FBE);">Slide 3</div>
+        <div class="snap-slide" style="background:linear-gradient(135deg,#4A2B8C,#D4AF37);">Slide 4</div>
+        <div class="snap-slide" style="background:linear-gradient(135deg,#7B2FBE,#9B59B6);">Slide 5</div>
+      </div>
+      <div class="code-block" style="margin:8px 0">
+        <div class="code-block-header"><span class="code-lang-label">CSS</span><button class="copy-btn">Copy</button></div>
+        <pre><code><span class="tok-com">/* Container */</span>
+<span class="tok-sel">.slider</span> {
+  <span class="tok-prop">overflow-x</span>:       <span class="tok-val">scroll</span>;
+  <span class="tok-prop">scroll-snap-type</span>: <span class="tok-val">x mandatory</span>; <span class="tok-com">/* or: y mandatory */</span>
+  <span class="tok-prop">display</span>:          <span class="tok-val">flex</span>;
+  <span class="tok-prop">scroll-behavior</span>:  <span class="tok-val">smooth</span>;
+}
+
+<span class="tok-com">/* Items */</span>
+<span class="tok-sel">.slide</span> {
+  <span class="tok-prop">scroll-snap-align</span>: <span class="tok-val">start</span>; <span class="tok-com">/* center | end */</span>
+  <span class="tok-prop">flex-shrink</span>:       <span class="tok-val">0</span>;
+  <span class="tok-prop">width</span>:             <span class="tok-val">100%</span>;
+}
+
+<span class="tok-com">/* Full-page vertical scroll */</span>
+<span class="tok-sel">html</span> {
+  <span class="tok-prop">scroll-snap-type</span>: <span class="tok-val">y mandatory</span>;
+}
+<span class="tok-sel">section</span> {
+  <span class="tok-prop">scroll-snap-align</span>: <span class="tok-val">start</span>;
+  <span class="tok-prop">min-height</span>:        <span class="tok-val">100vh</span>;
+}</code></pre>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ══ CLIP-PATH & SHAPES ══ -->
+<section class="doc-section" id="clip-path">
+  <div class="section-header">
+    <h2><span class="section-icon">✂️</span> CSS Shapes &amp; clip-path <span class="section-badge tag-new">Modern</span></h2>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <article class="prop-card">
+      <div class="prop-card-header"><h3>clip-path Shapes</h3><span class="prop-tag tag-css">Visual</span></div>
+      <div class="prop-description"><p>Click any shape to copy its <code>clip-path</code> value.</p></div>
+      <div class="clip-shapes-grid">
+        <div class="clip-shape-item"><div class="clip-shape" style="clip-path:circle(50%);" data-clip="clip-path: circle(50%)"></div><div class="clip-label">circle</div></div>
+        <div class="clip-shape-item"><div class="clip-shape" style="clip-path:ellipse(50% 30% at 50% 50%);" data-clip="clip-path: ellipse(50% 30% at 50% 50%)"></div><div class="clip-label">ellipse</div></div>
+        <div class="clip-shape-item"><div class="clip-shape" style="clip-path:polygon(50% 0%,100% 100%,0% 100%);" data-clip="clip-path: polygon(50% 0%, 100% 100%, 0% 100%)"></div><div class="clip-label">triangle</div></div>
+        <div class="clip-shape-item"><div class="clip-shape" style="clip-path:polygon(50% 0%,100% 38%,82% 100%,18% 100%,0% 38%);" data-clip="clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%)"></div><div class="clip-label">pentagon</div></div>
+        <div class="clip-shape-item"><div class="clip-shape" style="clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);" data-clip="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)"></div><div class="clip-label">star</div></div>
+        <div class="clip-shape-item"><div class="clip-shape" style="clip-path:polygon(0 0,100% 0,100% 80%,50% 100%,0 80%);" data-clip="clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%)"></div><div class="clip-label">chevron</div></div>
+        <div class="clip-shape-item"><div class="clip-shape" style="clip-path:inset(10% 10% 10% 10% round 16px);" data-clip="clip-path: inset(10% 10% 10% 10% round 16px)"></div><div class="clip-label">inset round</div></div>
+        <div class="clip-shape-item"><div class="clip-shape" style="clip-path:polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%);" data-clip="clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)"></div><div class="clip-label">hexagon</div></div>
+      </div>
+      <div class="code-block" style="margin:8px 0">
+        <div class="code-block-header"><span class="code-lang-label">CSS</span><button class="copy-btn">Copy</button></div>
+        <pre><code><span class="tok-sel">.circle</span>   { <span class="tok-prop">clip-path</span>: <span class="tok-fn">circle</span>(<span class="tok-val">50%</span>); }
+<span class="tok-sel">.triangle</span> { <span class="tok-prop">clip-path</span>: <span class="tok-fn">polygon</span>(<span class="tok-val">50% 0%, 100% 100%, 0% 100%</span>); }
+<span class="tok-sel">.star</span>     { <span class="tok-prop">clip-path</span>: <span class="tok-fn">polygon</span>(<span class="tok-val">50% 0%, 61% 35%, 98% 35%, ...</span>); }
+
+<span class="tok-com">/* Diagonal section divider */</span>
+<span class="tok-sel">.diagonal-section</span> {
+  <span class="tok-prop">clip-path</span>: <span class="tok-fn">polygon</span>(<span class="tok-val">0 0, 100% 0, 100% 90%, 0 100%</span>);
+}
+
+<span class="tok-com">/* Animated clip-path */</span>
+<span class="tok-sel">.reveal</span> {
+  <span class="tok-prop">clip-path</span>: <span class="tok-fn">inset</span>(<span class="tok-val">0 100% 0 0</span>);
+  <span class="tok-prop">transition</span>: <span class="tok-val">clip-path 0.6s ease</span>;
+}
+<span class="tok-sel">.reveal.visible</span> {
+  <span class="tok-prop">clip-path</span>: <span class="tok-fn">inset</span>(<span class="tok-val">0 0% 0 0</span>);
+}</code></pre>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ══ LOGICAL PROPERTIES ══ -->
+<section class="doc-section" id="logical-properties">
+  <div class="section-header">
+    <h2><span class="section-icon">↕️</span> CSS Logical Properties <span class="section-badge tag-new">Modern</span></h2>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <p style="color:var(--text-secondary);margin-bottom:16px;font-size:0.95rem;">Logical properties use writing-mode-relative directions instead of physical (top/right/bottom/left), making your CSS work correctly in all languages including RTL (Arabic, Hebrew) and vertical (Japanese) text.</p>
+    <article class="prop-card">
+      <div class="prop-card-header"><h3>Physical → Logical Mapping</h3><span class="prop-tag tag-css">i18n</span></div>
+      <table class="logical-table">
+        <tr><th>Physical (old)</th><th>Logical (new)</th><th>Meaning</th></tr>
+        <tr><td>width</td><td>inline-size</td><td>Size along writing direction</td></tr>
+        <tr><td>height</td><td>block-size</td><td>Size perpendicular to writing</td></tr>
+        <tr><td>margin-top</td><td>margin-block-start</td><td>Start of block axis</td></tr>
+        <tr><td>margin-bottom</td><td>margin-block-end</td><td>End of block axis</td></tr>
+        <tr><td>margin-left</td><td>margin-inline-start</td><td>Start of inline axis</td></tr>
+        <tr><td>margin-right</td><td>margin-inline-end</td><td>End of inline axis</td></tr>
+        <tr><td>padding-top/bottom</td><td>padding-block</td><td>Both block sides</td></tr>
+        <tr><td>padding-left/right</td><td>padding-inline</td><td>Both inline sides</td></tr>
+        <tr><td>border-top</td><td>border-block-start</td><td>—</td></tr>
+        <tr><td>top/bottom</td><td>inset-block</td><td>For positioned elements</td></tr>
+        <tr><td>left/right</td><td>inset-inline</td><td>For positioned elements</td></tr>
+        <tr><td>text-align: left</td><td>text-align: start</td><td>Writing-mode aware</td></tr>
+      </table>
+      <div class="code-block" style="margin:8px 0">
+        <div class="code-block-header"><span class="code-lang-label">CSS</span><button class="copy-btn">Copy</button></div>
+        <pre><code><span class="tok-com">/* Old way */</span>
+<span class="tok-sel">.card</span> {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+<span class="tok-com">/* New logical way (RTL-friendly!) */</span>
+<span class="tok-sel">.card</span> {
+  <span class="tok-prop">margin-block</span>:  <span class="tok-val">16px</span>;
+  <span class="tok-prop">padding-inline</span>: <span class="tok-val">24px</span>;
+  <span class="tok-prop">border-inline-start</span>: <span class="tok-val">3px solid gold</span>; <span class="tok-com">/* left in LTR, right in RTL */</span>
+  <span class="tok-prop">inset-inline-start</span>: <span class="tok-val">0</span>;              <span class="tok-com">/* replaces 'left' */</span>
+}</code></pre>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ══ CSS NESTING ══ -->
+<section class="doc-section" id="css-nesting">
+  <div class="section-header">
+    <h2><span class="section-icon">🪆</span> Native CSS Nesting <span class="section-badge tag-new">CSS 2024</span></h2>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <p style="color:var(--text-secondary);margin-bottom:16px;font-size:0.95rem;">CSS now supports native nesting — no preprocessor needed. Nest selectors inside each other just like Sass/SCSS.</p>
+    <article class="prop-card">
+      <div class="prop-card-header"><h3>CSS Nesting Syntax</h3><span class="prop-tag tag-css">Modern</span></div>
+      <div class="code-block" style="margin:0 0 8px">
+        <div class="code-block-header"><span class="code-lang-label">CSS (Native)</span><button class="copy-btn">Copy</button></div>
+        <pre><code><span class="tok-sel">.card</span> {
+  <span class="tok-prop">background</span>: <span class="tok-val">white</span>;
+  <span class="tok-prop">padding</span>: <span class="tok-val">20px</span>;
+
+  <span class="tok-com">/* Nested selectors */</span>
+  <span class="tok-sel">& .title</span> {              <span class="tok-com">/* .card .title */</span>
+    <span class="tok-prop">font-size</span>: <span class="tok-val">1.2rem</span>;
+  }
+
+  <span class="tok-sel">&:hover</span> {               <span class="tok-com">/* .card:hover */</span>
+    <span class="tok-prop">box-shadow</span>: <span class="tok-val">0 4px 20px rgba(0,0,0,0.2)</span>;
+  }
+
+  <span class="tok-sel">&.featured</span> {           <span class="tok-com">/* .card.featured */</span>
+    <span class="tok-prop">border-color</span>: <span class="tok-val">gold</span>;
+  }
+
+  <span class="tok-com">/* Nested media query */</span>
+  <span class="tok-sel">@media (max-width: 600px)</span> {
+    <span class="tok-prop">padding</span>: <span class="tok-val">12px</span>;
+  }
+}</code></pre>
+      </div>
+      <div class="compat-row">
+        <span style="font-family:var(--font-code);font-size:0.65rem;color:var(--text-muted);">Browser support:</span>
+        <span class="compat-badge supported">Chrome 120+</span>
+        <span class="compat-badge supported">Firefox 117+</span>
+        <span class="compat-badge supported">Safari 17.2+</span>
+        <span class="compat-badge supported">Edge 120+</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ══ @LAYER ══ -->
+<section class="doc-section" id="css-layers">
+  <div class="section-header">
+    <h2><span class="section-icon">🗂️</span> CSS @layer — Cascade Layers <span class="section-badge tag-new">CSS 2024</span></h2>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <p style="color:var(--text-secondary);margin-bottom:16px;font-size:0.95rem;"><code>@layer</code> lets you explicitly control the cascade order of styles — no more specificity wars. Later layers win over earlier ones, regardless of selector specificity.</p>
+    <article class="prop-card">
+      <div class="prop-card-header"><h3>@layer Usage</h3><span class="prop-tag tag-css">Modern</span></div>
+      <div class="code-block" style="margin:0 0 8px">
+        <div class="code-block-header"><span class="code-lang-label">CSS</span><button class="copy-btn">Copy</button></div>
+        <pre><code><span class="tok-com">/* Declare layer order (lowest to highest priority) */</span>
+<span class="tok-key">@layer</span> reset, defaults, components, utilities;
+
+<span class="tok-com">/* Styles in earlier layers can be overridden by later layers */</span>
+<span class="tok-key">@layer</span> reset {
+  <span class="tok-sel">*</span> { <span class="tok-prop">margin</span>: <span class="tok-val">0</span>; <span class="tok-prop">box-sizing</span>: <span class="tok-val">border-box</span>; }
+}
+
+<span class="tok-key">@layer</span> components {
+  <span class="tok-sel">.btn</span> { <span class="tok-prop">padding</span>: <span class="tok-val">8px 16px</span>; <span class="tok-prop">background</span>: <span class="tok-val">purple</span>; }
+}
+
+<span class="tok-key">@layer</span> utilities {
+  <span class="tok-com">/* Even a low-specificity class here beats .btn */</span>
+  <span class="tok-sel">.p-0</span> { <span class="tok-prop">padding</span>: <span class="tok-val">0 !important</span>; }
+}
+
+<span class="tok-com">/* Import a stylesheet into a layer */</span>
+<span class="tok-key">@import</span> <span class="tok-fn">url</span>(<span class="tok-str">'bootstrap.css'</span>) <span class="tok-val">layer(vendor)</span>;</code></pre>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ══ @PROPERTY ══ -->
+<section class="doc-section" id="css-property">
+  <div class="section-header">
+    <h2><span class="section-icon">🧪</span> @property — Typed CSS Variables <span class="section-badge tag-new">CSS 2024</span></h2>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <p style="color:var(--text-secondary);margin-bottom:16px;font-size:0.95rem;"><code>@property</code> lets you define typed custom properties with default values and inheritance control — and enables animating gradients and colors that plain CSS variables cannot.</p>
+    <article class="prop-card">
+      <div class="prop-card-header"><h3>@property Syntax</h3><span class="prop-tag tag-css">Modern</span></div>
+      <div class="code-block" style="margin:0 0 8px">
+        <div class="code-block-header"><span class="code-lang-label">CSS</span><button class="copy-btn">Copy</button></div>
+        <pre><code><span class="tok-key">@property</span> <span class="tok-prop">--gradient-angle</span> {
+  <span class="tok-prop">syntax</span>:        <span class="tok-str">'&lt;angle&gt;'</span>;
+  <span class="tok-prop">inherits</span>:      <span class="tok-val">false</span>;
+  <span class="tok-prop">initial-value</span>: <span class="tok-val">0deg</span>;
+}
+
+<span class="tok-sel">.animated-gradient</span> {
+  <span class="tok-prop">background</span>: <span class="tok-fn">conic-gradient</span>(<span class="tok-val">from var(--gradient-angle)</span>, <span class="tok-val">purple</span>, <span class="tok-val">gold</span>, <span class="tok-val">purple</span>);
+  <span class="tok-prop">animation</span>: <span class="tok-val">spin 3s linear infinite</span>;
+}
+
+<span class="tok-key">@keyframes</span> <span class="tok-fn">spin</span> {
+  <span class="tok-val">to</span> { <span class="tok-prop">--gradient-angle</span>: <span class="tok-val">360deg</span>; }
+}
+
+<span class="tok-com">/* @property enables smooth color interpolation too */</span>
+<span class="tok-key">@property</span> <span class="tok-prop">--hue</span> {
+  <span class="tok-prop">syntax</span>:        <span class="tok-str">'&lt;number&gt;'</span>;
+  <span class="tok-prop">inherits</span>:      <span class="tok-val">false</span>;
+  <span class="tok-prop">initial-value</span>: <span class="tok-val">0</span>;
+}</code></pre>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ══ SASS/SCSS ══ -->
+<section class="doc-section" id="sass-scss">
+  <div class="section-header">
+    <h2><span class="section-icon">💎</span> Sass / SCSS</h2>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <p style="color:var(--text-secondary);margin-bottom:16px;font-size:0.95rem;">Sass is a CSS preprocessor that compiles to standard CSS. SCSS (Sassy CSS) is the modern syntax — it's a strict superset of CSS, so any valid CSS is valid SCSS.</p>
+
+    <article class="prop-card">
+      <div class="prop-card-header"><h3>SCSS vs CSS — Side by Side</h3><span class="prop-tag lang-badge-scss">SCSS</span></div>
+      <div class="sass-compare">
+        <div class="sass-pane">
+          <div class="sass-pane-header">SCSS</div>
+          <pre><code><span class="tok-com">// Variables</span>
+<span class="tok-prop">$primary</span>: <span class="tok-val">#7B2FBE</span>;
+<span class="tok-prop">$gold</span>:    <span class="tok-val">#D4AF37</span>;
+<span class="tok-prop">$radius</span>:  <span class="tok-val">8px</span>;
+
+<span class="tok-com">// Nesting</span>
+<span class="tok-sel">.card</span> {
+  <span class="tok-prop">background</span>: <span class="tok-val">$primary</span>;
+  <span class="tok-prop">border-radius</span>: <span class="tok-val">$radius</span>;
+
+  <span class="tok-sel">&__title</span> {
+    <span class="tok-prop">color</span>: <span class="tok-val">$gold</span>;
+  }
+  <span class="tok-sel">&:hover</span> {
+    <span class="tok-prop">opacity</span>: <span class="tok-val">0.9</span>;
+  }
+}
+
+<span class="tok-com">// Mixin</span>
+<span class="tok-key">@mixin</span> <span class="tok-fn">flex-center</span> {
+  <span class="tok-prop">display</span>: <span class="tok-val">flex</span>;
+  <span class="tok-prop">align-items</span>: <span class="tok-val">center</span>;
+  <span class="tok-prop">justify-content</span>: <span class="tok-val">center</span>;
+}
+
+<span class="tok-sel">.hero</span> { <span class="tok-key">@include</span> <span class="tok-fn">flex-center</span>; }
+
+<span class="tok-com">// Extend / Placeholder</span>
+<span class="tok-sel">%btn-base</span> { <span class="tok-prop">padding</span>: <span class="tok-val">8px 16px</span>; }
+<span class="tok-sel">.btn-primary</span> { <span class="tok-key">@extend</span> <span class="tok-val">%btn-base</span>; }
+
+<span class="tok-com">// Each loop</span>
+<span class="tok-key">@each</span> <span class="tok-val">$size</span> <span class="tok-key">in</span> <span class="tok-val">sm, md, lg</span> {
+  <span class="tok-sel">.text-#{$size}</span> { <span class="tok-prop">font-size</span>: <span class="tok-fn">map-get</span>(<span class="tok-val">$sizes, $size</span>); }
+}</code></pre>
+        </div>
+        <div class="sass-pane">
+          <div class="sass-pane-header">Compiled CSS</div>
+          <pre><code><span class="tok-com">/* Variables become values */</span>
+
+
+
+
+<span class="tok-com">/* Nesting flattens */</span>
+<span class="tok-sel">.card</span> {
+  <span class="tok-prop">background</span>: <span class="tok-val">#7B2FBE</span>;
+  <span class="tok-prop">border-radius</span>: <span class="tok-val">8px</span>;
+}
+<span class="tok-sel">.card__title</span> {
+  <span class="tok-prop">color</span>: <span class="tok-val">#D4AF37</span>;
+}
+<span class="tok-sel">.card:hover</span> {
+  <span class="tok-prop">opacity</span>: <span class="tok-val">0.9</span>;
+}
+
+<span class="tok-com">/* Mixin inlines */</span>
+<span class="tok-sel">.hero</span> {
+  <span class="tok-prop">display</span>: <span class="tok-val">flex</span>;
+  <span class="tok-prop">align-items</span>: <span class="tok-val">center</span>;
+  <span class="tok-prop">justify-content</span>: <span class="tok-val">center</span>;
+}
+
+<span class="tok-com">/* Extend merges selectors */</span>
+<span class="tok-sel">.btn-primary</span> { <span class="tok-prop">padding</span>: <span class="tok-val">8px 16px</span>; }
+
+<span class="tok-com">/* Loops generate classes */</span>
+<span class="tok-sel">.text-sm</span> { <span class="tok-prop">font-size</span>: <span class="tok-val">0.875rem</span>; }
+<span class="tok-sel">.text-md</span> { <span class="tok-prop">font-size</span>: <span class="tok-val">1rem</span>; }
+<span class="tok-sel">.text-lg</span> { <span class="tok-prop">font-size</span>: <span class="tok-val">1.25rem</span>; }</code></pre>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ══ INTERACTIVE TOOLS ══ -->
+<section class="doc-section" id="interactive-tools">
+  <div class="section-header">
+    <h2><span class="section-icon">🛠️</span> Interactive Tools</h2>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+
+    <!-- Live HTML+CSS Editor -->
+    <article class="prop-card" id="live-editor">
+      <div class="prop-card-header"><h3>Live HTML + CSS Editor</h3><span class="prop-tag tag-new">Interactive</span></div>
+      <div class="prop-description"><p>Write HTML and CSS on the left, see the result on the right instantly.</p></div>
+      <div class="live-editor" id="live-code-editor">
+        <div class="live-editor-bar">
+          <div class="live-editor-dot dot-red"></div>
+          <div class="live-editor-dot dot-yellow"></div>
+          <div class="live-editor-dot dot-green"></div>
+          <span class="live-editor-title">Live Editor — HTML + CSS</span>
+          <button class="live-editor-run" id="run-code-btn">▶ Run</button>
+        </div>
+        <div class="live-editor-pane">
+          <div class="pane-label">Code (HTML + &lt;style&gt;)</div>
+          <textarea id="live-html-input" spellcheck="false">&lt;style&gt;
+  .box {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #7B2FBE, #D4AF37);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: serif;
+    font-size: 1.1rem;
+    animation: spin 3s linear infinite;
+    margin: 20px auto;
+  }
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+&lt;/style&gt;
+&lt;div class="box"&gt;⚜ Live!&lt;/div&gt;</textarea>
+        </div>
+        <div class="live-editor-pane">
+          <div class="pane-label">Preview</div>
+          <div class="live-editor-preview">
+            <iframe id="live-preview-frame" title="Live preview"></iframe>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Flexbox Playground -->
+    <article class="prop-card" id="flexbox-playground">
+      <div class="prop-card-header"><h3>Flexbox Playground</h3><span class="prop-tag tag-new">Interactive</span></div>
+      <div class="prop-description"><p>Adjust the controls and see the CSS update live.</p></div>
+      <div class="flex-playground">
+        <div class="playground-controls">
+          <div class="ctrl-group">
+            <label>flex-direction</label>
+            <select id="pg-direction">
+              <option value="row">row</option>
+              <option value="row-reverse">row-reverse</option>
+              <option value="column">column</option>
+              <option value="column-reverse">column-reverse</option>
+            </select>
+          </div>
+          <div class="ctrl-group">
+            <label>justify-content</label>
+            <select id="pg-justify">
+              <option value="flex-start">flex-start</option>
+              <option value="flex-end">flex-end</option>
+              <option value="center">center</option>
+              <option value="space-between">space-between</option>
+              <option value="space-around">space-around</option>
+              <option value="space-evenly">space-evenly</option>
+            </select>
+          </div>
+          <div class="ctrl-group">
+            <label>align-items</label>
+            <select id="pg-align">
+              <option value="stretch">stretch</option>
+              <option value="flex-start">flex-start</option>
+              <option value="flex-end">flex-end</option>
+              <option value="center">center</option>
+              <option value="baseline">baseline</option>
+            </select>
+          </div>
+          <div class="ctrl-group">
+            <label>flex-wrap</label>
+            <select id="pg-wrap">
+              <option value="nowrap">nowrap</option>
+              <option value="wrap">wrap</option>
+              <option value="wrap-reverse">wrap-reverse</option>
+            </select>
+          </div>
+          <div class="ctrl-group">
+            <label>gap: <span id="pg-gap-val">8</span>px</label>
+            <input type="range" id="pg-gap" min="0" max="40" value="8">
+          </div>
+          <div class="ctrl-group">
+            <label>items: <span id="pg-items-val">4</span></label>
+            <input type="range" id="pg-items" min="1" max="8" value="4">
+          </div>
+        </div>
+        <div class="playground-preview">
+          <div class="playground-container" id="flex-pg-container"></div>
+        </div>
+        <div class="playground-code" id="flex-pg-code"></div>
+      </div>
+    </article>
+
+    <!-- Cubic Bezier Editor -->
+    <article class="prop-card" id="bezier-tool">
+      <div class="prop-card-header"><h3>Cubic Bézier Easing Editor</h3><span class="prop-tag tag-new">Interactive</span></div>
+      <div class="prop-description"><p>Drag the control points to design your easing curve. Click ▶ to preview.</p></div>
+      <div class="bezier-editor">
+        <div class="bezier-top">
+          <div class="bezier-canvas-wrap">
+            <canvas id="bezier-canvas" width="170" height="170"></canvas>
+          </div>
+          <div class="bezier-controls">
+            <div class="bezier-sliders">
+              <div class="ctrl-group"><label>x1: <span id="bz-x1-val">0.25</span></label><input type="range" id="bz-x1" min="0" max="1" step="0.01" value="0.25"></div>
+              <div class="ctrl-group"><label>y1: <span id="bz-y1-val">0.1</span></label><input type="range" id="bz-y1" min="-1" max="2" step="0.01" value="0.1"></div>
+              <div class="ctrl-group"><label>x2: <span id="bz-x2-val">0.25</span></label><input type="range" id="bz-x2" min="0" max="1" step="0.01" value="0.25"></div>
+              <div class="ctrl-group"><label>y2: <span id="bz-y2-val">1.0</span></label><input type="range" id="bz-y2" min="-1" max="2" step="0.01" value="1.0"></div>
+            </div>
+            <div style="padding:6px 0;display:flex;flex-direction:column;gap:6px;">
+              <div class="ctrl-group">
+                <label>Presets</label>
+                <select id="bz-preset">
+                  <option value="0.25,0.1,0.25,1">ease</option>
+                  <option value="0,0,1,1">linear</option>
+                  <option value="0.42,0,1,1">ease-in</option>
+                  <option value="0,0,0.58,1">ease-out</option>
+                  <option value="0.42,0,0.58,1">ease-in-out</option>
+                  <option value="0.34,1.56,0.64,1">spring / bounce</option>
+                  <option value="0.68,-0.55,0.27,1.55">back in-out</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bezier-preview-wrap">
+          <button class="bezier-play-btn" id="bz-play">▶ Preview</button>
+          <div class="bezier-ball-track"><div class="bezier-ball" id="bz-ball"></div></div>
+          <div class="bezier-output" id="bz-output">cubic-bezier(0.25, 0.1, 0.25, 1)</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Color Palette Builder -->
+    <article class="prop-card" id="palette-tool">
+      <div class="prop-card-header"><h3>CSS Color Palette Builder</h3><span class="prop-tag tag-new">Interactive</span></div>
+      <div class="prop-description"><p>Pick your brand colors and get ready-to-use CSS custom properties.</p></div>
+      <div class="color-builder">
+        <div class="color-builder-row">
+          <label>Primary</label>
+          <input type="color" class="color-picker-input" id="pal-primary" value="#7B2FBE">
+          <div class="color-builder-swatches" id="pal-primary-swatches"></div>
+        </div>
+        <div class="color-builder-row">
+          <label>Accent</label>
+          <input type="color" class="color-picker-input" id="pal-accent" value="#D4AF37">
+          <div class="color-builder-swatches" id="pal-accent-swatches"></div>
+        </div>
+        <div class="color-builder-row">
+          <label>Neutral</label>
+          <input type="color" class="color-picker-input" id="pal-neutral" value="#2D2D3F">
+          <div class="color-builder-swatches" id="pal-neutral-swatches"></div>
+        </div>
+        <pre class="color-builder-css" id="palette-output">/* Your CSS variables will appear here */</pre>
+      </div>
+    </article>
+
+    <!-- Specificity Battle -->
+    <article class="prop-card" id="spec-battle-tool">
+      <div class="prop-card-header"><h3>Specificity Battle ⚔️</h3><span class="prop-tag tag-new">Interactive</span></div>
+      <div class="prop-description"><p>Enter two CSS selectors and see which one wins.</p></div>
+      <div class="spec-battle">
+        <div class="spec-battle-side">
+          <div class="spec-battle-label">Selector A</div>
+          <input class="spec-battle-input" id="battle-a" type="text" placeholder="nav > ul.menu li" value="nav > ul.menu li">
+          <div class="spec-battle-score" id="battle-a-score">(0,1,2)</div>
+        </div>
+        <div class="spec-battle-vs">⚔</div>
+        <div class="spec-battle-side">
+          <div class="spec-battle-label">Selector B</div>
+          <input class="spec-battle-input" id="battle-b" type="text" placeholder="#header a" value="#header a">
+          <div class="spec-battle-score" id="battle-b-score">(1,0,1)</div>
+        </div>
+        <div class="spec-battle-result" id="battle-result">—</div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ══ HTML ENTITIES ══ -->
+<section class="doc-section" id="html-entities">
+  <div class="section-header">
+    <h2><span class="section-icon">🔣</span> HTML Entities &amp; Special Characters</h2>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <p style="color:var(--text-secondary);margin-bottom:12px;font-size:0.95rem;">HTML entities encode characters that would otherwise be interpreted as code, or characters that aren't on your keyboard. Click any entity to copy it.</p>
+    <div id="entity-grid" class="entity-grid"></div>
+    <div class="entity-copied-toast" id="entity-toast">Copied!</div>
+  </div>
+</section>
+
+<!-- ══ CSS COLOR NAMES ══ -->
+<section class="doc-section" id="color-names">
+  <div class="section-header">
+    <h2><span class="section-icon">🎨</span> CSS Named Colors — Full Reference</h2>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <p style="color:var(--text-secondary);margin-bottom:12px;font-size:0.95rem;">CSS has 140+ named colors. Click any to copy the color name.</p>
+    <div id="color-names-grid" class="color-names-grid"></div>
+  </div>
+</section>
+
+<!-- ══ CSS RESET COMPARISON ══ -->
+<section class="doc-section" id="css-resets">
+  <div class="section-header">
+    <h2><span class="section-icon">♻️</span> CSS Reset Comparison</h2>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <p style="color:var(--text-secondary);margin-bottom:16px;font-size:0.95rem;">Before writing a single line of CSS, decide on your reset strategy. Different resets suit different projects.</p>
+
+    <article class="prop-card">
+      <div class="prop-card-header"><h3>Modern CSS Reset (recommended 2024)</h3><span class="prop-tag tag-new">Best Practice</span></div>
+      <div class="code-block" style="margin:0 0 8px">
+        <div class="code-block-header"><span class="code-lang-label">CSS</span><button class="copy-btn">Copy</button></div>
+        <pre><code><span class="tok-com">/* Modern CSS Reset — Andy Bell (updated) */</span>
+<span class="tok-sel">*, *::before, *::after</span> { <span class="tok-prop">box-sizing</span>: <span class="tok-val">border-box</span>; }
+
+<span class="tok-sel">*</span> { <span class="tok-prop">margin</span>: <span class="tok-val">0</span>; }
+
+<span class="tok-sel">html</span> {
+  <span class="tok-prop">-webkit-text-size-adjust</span>: <span class="tok-val">none</span>;
+  <span class="tok-prop">hanging-punctuation</span>: <span class="tok-val">first last</span>;
+}
+
+<span class="tok-sel">body</span> { <span class="tok-prop">min-height</span>: <span class="tok-val">100svh</span>; }
+
+<span class="tok-sel">h1, h2, h3, h4, h5, h6</span> {
+  <span class="tok-prop">text-wrap</span>: <span class="tok-val">balance</span>;
+}
+
+<span class="tok-sel">p, li, figcaption</span> {
+  <span class="tok-prop">text-wrap</span>: <span class="tok-val">pretty</span>;          <span class="tok-com">/* prevents orphans */</span>
+  <span class="tok-prop">max-width</span>: <span class="tok-val">65ch</span>;            <span class="tok-com">/* readable line length */</span>
+}
+
+<span class="tok-sel">img, video, svg</span> {
+  <span class="tok-prop">max-width</span>: <span class="tok-val">100%</span>;
+  <span class="tok-prop">display</span>:   <span class="tok-val">block</span>;
+  <span class="tok-prop">height</span>:    <span class="tok-val">auto</span>;
+}
+
+<span class="tok-sel">input, button, textarea, select</span> {
+  <span class="tok-prop">font</span>: <span class="tok-val">inherit</span>;
+}
+
+<span class="tok-sel">@media (prefers-reduced-motion: no-preference)</span> {
+  <span class="tok-sel">:has(:target)</span> { <span class="tok-prop">scroll-behavior</span>: <span class="tok-val">smooth</span>; }
+}</code></pre>
+      </div>
+    </article>
+
+    <article class="prop-card">
+      <div class="prop-card-header"><h3>Comparison Table</h3><span class="prop-tag tag-css">Reference</span></div>
+      <table class="quick-ref-table">
+        <tr><th>Reset</th><th>Philosophy</th><th>Best for</th></tr>
+        <tr><td>Meyer Reset</td><td>Strips everything — blank canvas</td><td>Full custom design systems</td></tr>
+        <tr><td>Normalize.css</td><td>Makes browsers consistent, preserves useful defaults</td><td>General projects, quick starts</td></tr>
+        <tr><td>Modern Reset (above)</td><td>Opinionated improvements for 2024 CSS</td><td>New projects with modern CSS</td></tr>
+        <tr><td>Tailwind Preflight</td><td>Normalize + Tailwind-specific defaults</td><td>Tailwind CSS projects</td></tr>
+        <tr><td>Open Props Reset</td><td>Minimal reset + CSS custom properties</td><td>Design-token-driven projects</td></tr>
+      </table>
+    </article>
+  </div>
+</section>
+
+<!-- ══ COMMON MISTAKES ══ -->
+<section class="doc-section" id="common-mistakes">
+  <div class="section-header">
+    <h2><span class="section-icon">⚠️</span> Common Mistakes &amp; How to Fix Them</h2>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <article class="prop-card">
+      <div class="prop-card-header"><h3>HTML Mistakes</h3><span class="prop-tag tag-html">Debug</span></div>
+      <div class="mistake-card">
+        <div class="mistake-bad"><div class="mistake-label">❌ Wrong</div><div class="code-block"><pre><code><span class="tok-com">&lt;!-- Using divs for everything --&gt;</span>
+<span class="tok-tag">&lt;div</span> <span class="tok-attr">class</span>=<span class="tok-str">"header"</span><span class="tok-tag">&gt;</span>...<span class="tok-tag">&lt;/div&gt;</span>
+<span class="tok-tag">&lt;div</span> <span class="tok-attr">class</span>=<span class="tok-str">"nav"</span><span class="tok-tag">&gt;</span>...<span class="tok-tag">&lt;/div&gt;</span>
+<span class="tok-tag">&lt;div</span> <span class="tok-attr">onclick</span>=<span class="tok-str">"go()"</span><span class="tok-tag">&gt;</span>Click<span class="tok-tag">&lt;/div&gt;</span></code></pre></div></div>
+        <div class="mistake-good"><div class="mistake-label">✅ Correct</div><div class="code-block"><pre><code><span class="tok-com">&lt;!-- Use semantic elements --&gt;</span>
+<span class="tok-tag">&lt;header&gt;</span>...<span class="tok-tag">&lt;/header&gt;</span>
+<span class="tok-tag">&lt;nav&gt;</span>...<span class="tok-tag">&lt;/nav&gt;</span>
+<span class="tok-tag">&lt;button</span> <span class="tok-attr">onclick</span>=<span class="tok-str">"go()"</span><span class="tok-tag">&gt;</span>Click<span class="tok-tag">&lt;/button&gt;</span></code></pre></div></div>
+      </div>
+      <div class="mistake-card" style="margin-top:8px">
+        <div class="mistake-bad"><div class="mistake-label">❌ Wrong</div><div class="code-block"><pre><code><span class="tok-tag">&lt;img</span> <span class="tok-attr">src</span>=<span class="tok-str">"logo.png"</span><span class="tok-tag">&gt;</span>
+<span class="tok-com">&lt;!-- Missing alt --&gt;</span></code></pre></div></div>
+        <div class="mistake-good"><div class="mistake-label">✅ Correct</div><div class="code-block"><pre><code><span class="tok-tag">&lt;img</span> <span class="tok-attr">src</span>=<span class="tok-str">"logo.png"</span> <span class="tok-attr">alt</span>=<span class="tok-str">"Company Logo"</span><span class="tok-tag">&gt;</span>
+<span class="tok-com">&lt;!-- Decorative: alt="" --&gt;</span></code></pre></div></div>
+      </div>
+    </article>
+
+    <article class="prop-card">
+      <div class="prop-card-header"><h3>CSS Mistakes</h3><span class="prop-tag tag-css">Debug</span></div>
+      <div class="mistake-card">
+        <div class="mistake-bad"><div class="mistake-label">❌ Wrong</div><div class="code-block"><pre><code><span class="tok-com">/* Animating layout properties */</span>
+<span class="tok-sel">.box:hover</span> {
+  <span class="tok-prop">width</span>: <span class="tok-val">200px</span>;   <span class="tok-com">/* causes reflow */</span>
+  <span class="tok-prop">top</span>: <span class="tok-val">20px</span>;     <span class="tok-com">/* causes repaint */</span>
+}</code></pre></div></div>
+        <div class="mistake-good"><div class="mistake-label">✅ Correct</div><div class="code-block"><pre><code><span class="tok-com">/* Use transform + opacity only */</span>
+<span class="tok-sel">.box:hover</span> {
+  <span class="tok-prop">transform</span>: <span class="tok-fn">scaleX</span>(<span class="tok-val">1.2</span>);    <span class="tok-com">/* GPU */</span>
+  <span class="tok-prop">transform</span>: <span class="tok-fn">translateY</span>(<span class="tok-val">20px</span>); <span class="tok-com">/* GPU */</span>
+}</code></pre></div></div>
+      </div>
+      <div class="mistake-card" style="margin-top:8px">
+        <div class="mistake-bad"><div class="mistake-label">❌ Wrong</div><div class="code-block"><pre><code><span class="tok-com">/* Magic numbers */</span>
+<span class="tok-sel">.card</span> { <span class="tok-prop">margin-top</span>: <span class="tok-val">37px</span>; }
+<span class="tok-sel">.hero</span> { <span class="tok-prop">padding</span>: <span class="tok-val">83px</span>; }</code></pre></div></div>
+        <div class="mistake-good"><div class="mistake-label">✅ Correct</div><div class="code-block"><pre><code><span class="tok-com">/* Use a spacing scale */</span>
+<span class="tok-sel">:root</span> { <span class="tok-prop">--space-lg</span>: <span class="tok-val">2rem</span>; }
+<span class="tok-sel">.card</span> { <span class="tok-prop">margin-top</span>: <span class="tok-fn">var</span>(<span class="tok-prop">--space-lg</span>); }</code></pre></div></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ══ PATTERN LIBRARY ══ -->
+<section class="doc-section" id="pattern-library">
+  <div class="section-header">
+    <h2><span class="section-icon">📚</span> Common UI Patterns — Copy &amp; Paste</h2>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <p style="color:var(--text-secondary);margin-bottom:16px;font-size:0.95rem;">Production-ready HTML + CSS snippets for the most common UI components.</p>
+    <div class="pattern-grid" id="pattern-grid"></div>
+  </div>
+</section>
+
+<!-- ══ ACCESSIBILITY (filled) ══ -->
+<section class="doc-section" id="accessibility">
+  <div class="section-header">
+    <h2><span class="section-icon">♿</span> Accessibility</h2>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <p style="color:var(--text-secondary);margin-bottom:16px;font-size:0.95rem;">Accessible web design ensures everyone — including people with disabilities — can perceive, understand, navigate, and interact with your site. WCAG (Web Content Accessibility Guidelines) provides the standard.</p>
+
+    <article class="prop-card">
+      <div class="prop-card-header"><h3>ARIA Roles &amp; Attributes</h3><span class="prop-tag tag-html">A11y</span></div>
+      <table class="quick-ref-table">
+        <tr><th>Attribute / Role</th><th>Purpose</th><th>Example</th></tr>
+        <tr><td>alt=""</td><td>Image description for screen readers</td><td>&lt;img alt="Logo"&gt;</td></tr>
+        <tr><td>aria-label</td><td>Label for unlabeled elements</td><td>&lt;button aria-label="Close"&gt;✕&lt;/button&gt;</td></tr>
+        <tr><td>aria-labelledby</td><td>Points to element providing the label</td><td>aria-labelledby="section-title"</td></tr>
+        <tr><td>aria-describedby</td><td>Points to longer description</td><td>aria-describedby="hint-text"</td></tr>
+        <tr><td>aria-hidden="true"</td><td>Hides decorative elements from AT</td><td>&lt;span aria-hidden="true"&gt;✦&lt;/span&gt;</td></tr>
+        <tr><td>aria-expanded</td><td>State of collapsible widgets</td><td>aria-expanded="false"</td></tr>
+        <tr><td>aria-live</td><td>Announces dynamic content changes</td><td>aria-live="polite"</td></tr>
+        <tr><td>role="navigation"</td><td>Landmark roles for screen readers</td><td>role="main|banner|contentinfo"</td></tr>
+        <tr><td>tabindex="0"</td><td>Makes element keyboard-focusable</td><td>Custom interactive elements</td></tr>
+        <tr><td>tabindex="-1"</td><td>Programmatically focusable only</td><td>Modal focus management</td></tr>
+        <tr><td>:focus-visible</td><td>CSS — show focus ring for keyboard only</td><td>:focus-visible { outline: 2px solid gold }</td></tr>
+      </table>
+      <div class="code-block" style="margin:8px 0">
+        <div class="code-block-header"><span class="code-lang-label">HTML + CSS</span><button class="copy-btn">Copy</button></div>
+        <pre><code><span class="tok-com">&lt;!-- Skip link (first focusable element) --&gt;</span>
+<span class="tok-tag">&lt;a</span> <span class="tok-attr">href</span>=<span class="tok-str">"#main"</span> <span class="tok-attr">class</span>=<span class="tok-str">"skip-link"</span><span class="tok-tag">&gt;</span>Skip to content<span class="tok-tag">&lt;/a&gt;</span>
+
+<span class="tok-com">&lt;!-- Accessible button --&gt;</span>
+<span class="tok-tag">&lt;button</span> <span class="tok-attr">type</span>=<span class="tok-str">"button"</span> <span class="tok-attr">aria-label</span>=<span class="tok-str">"Open navigation menu"</span>
+        <span class="tok-attr">aria-expanded</span>=<span class="tok-str">"false"</span> <span class="tok-attr">aria-controls</span>=<span class="tok-str">"nav-menu"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;svg</span> <span class="tok-attr">aria-hidden</span>=<span class="tok-str">"true"</span><span class="tok-tag">&gt;</span>...<span class="tok-tag">&lt;/svg&gt;</span>
+<span class="tok-tag">&lt;/button&gt;</span>
+
+<span class="tok-com">/* CSS — only show outline for keyboard users */</span>
+<span class="tok-sel">:focus-visible</span> {
+  <span class="tok-prop">outline</span>: <span class="tok-val">2px solid var(--accent)</span>;
+  <span class="tok-prop">outline-offset</span>: <span class="tok-val">3px</span>;
+}
+<span class="tok-sel">:focus:not(:focus-visible)</span> { <span class="tok-prop">outline</span>: <span class="tok-val">none</span>; }
+
+<span class="tok-com">/* Skip link */</span>
+<span class="tok-sel">.skip-link</span> {
+  <span class="tok-prop">position</span>: <span class="tok-val">absolute</span>;
+  <span class="tok-prop">top</span>: <span class="tok-val">-40px</span>;
+  <span class="tok-prop">transition</span>: <span class="tok-val">top 0.2s</span>;
+}
+<span class="tok-sel">.skip-link:focus</span> { <span class="tok-prop">top</span>: <span class="tok-val">8px</span>; }</code></pre>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     FOOTER — paste AFTER </main> tag
+     ════════════════════════════════════════════ -->
+
+<footer class="site-footer">
+  <div class="footer-ornament-top" aria-hidden="true"></div>
+  <div class="footer-inner">
+
+    <p class="footer-name">Ayuna Brigitte Yulianz · 林元薇</p>
+    <p class="footer-tagline">Built with curiosity, styled with obsession</p>
+
+    <div class="footer-divider"><span>✦</span></div>
+
+    <div class="footer-socials">
+
+      <a href="https://www.instagram.com/ayayunana" target="_blank" rel="noopener noreferrer" class="social-link">
+        <span class="social-icon" aria-hidden="true"></span>
+        <span>
+          <span class="social-platform">Instagram</span>
+          <span class="social-handle">@ayayunana</span>
+        </span>
+      </a>
+
+      <a href="https://www.tiktok.com/@yunaakh" target="_blank" rel="noopener noreferrer" class="social-link">
+        <span class="social-icon" aria-hidden="true"></span>
+        <span>
+          <span class="social-platform">TikTok</span>
+          <span class="social-handle">@yunaakh</span>
+        </span>
+      </a>
+
+      <a href="https://www.linkedin.com/in/ayuna-brigitte-yulianz-%E6%9E%97%E5%85%83%E8%96%87-23a0133aa/" target="_blank" rel="noopener noreferrer" class="social-link">
+        <span class="social-icon" aria-hidden="true"></span>
+        <span>
+          <span class="social-platform">LinkedIn</span>
+          <span class="social-handle">Ayuna Brigitte Yulianz</span>
+        </span>
+      </a>
+
+      <a href="mailto:ayunabrigitte@gmail.com" class="social-link">
+        <span class="social-icon" aria-hidden="true"></span>
+        <span>
+          <span class="social-platform">Email</span>
+          <span class="social-handle">ayunabrigitte@gmail.com</span>
+        </span>
+      </a>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>HTML &amp; CSS Encyclopedia — Baroque Edition v3.0</span>
+      <div class="footer-tech">
+        <span class="tech-badge">HTML5</span>
+        <span class="tech-badge">CSS3</span>
+        <span class="tech-badge">Vanilla JS</span>
+        <span class="tech-badge">No Frameworks</span>
+        <span class="tech-badge">Dark/Light Mode</span>
+        <span class="tech-badge">i18n × 8 langs</span>
+      </div>
+      <span>Made with ✦</span>
+    </div>
+
+  </div>
+</footer>
+
+
+</main>
+</div>
+
+<!-- Back to Top -->
+<a id="back-to-top" aria-label="Back to top"><span aria-hidden="true"></span></a>
+
+
+<!-- Keyboard Shortcuts Overlay -->
+<div class="kbd-overlay" id="kbd-overlay">
+  <div class="kbd-panel">
+    <h3>⌨ Keyboard Shortcuts</h3>
+    <ul class="kbd-list">
+      <li><span>Search sections</span><span><kbd>⌘</kbd> + <kbd>K</kbd></span></li>
+      <li><span>Close / dismiss</span><span><kbd>Esc</kbd></span></li>
+      <li><span>This help panel</span><span><kbd>?</kbd></span></li>
+      <li><span>Run live editor</span><span><kbd>⌘</kbd> + <kbd>↵</kbd></span></li>
+    </ul>
+    <p style="text-align:center;margin-top:16px;font-family:var(--font-code);font-size:0.65rem;color:var(--text-muted);">Press <kbd>?</kbd> or <kbd>Esc</kbd> to close</p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script src="additions.js"></script>
+<script src="fixes.js"></script>
+</body>
+</html>
